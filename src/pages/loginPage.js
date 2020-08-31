@@ -22,7 +22,7 @@ export default class LoginPage extends Component {
                 <CheckBox>
                     
                </CheckBox>
-               <Text>Beni Hatırla</Text>
+               <Text>Fcuk Man</Text>
             </View>
          </View>
         
