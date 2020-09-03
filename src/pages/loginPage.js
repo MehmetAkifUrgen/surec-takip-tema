@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,StyleSheet,TextInput,StatusBar,Image } from 'react-native';
+import { View, Text,StyleSheet,TextInput,StatusBar,Image , Button} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 
 
@@ -9,11 +9,11 @@ export default class LoginPage extends Component {
       value=false
   }
   render() {
-    
+    const { navigate , push, goBack} = this.props.navigation
     return (
     
       <View style={styles.container}>
-         <StatusBar backgroundColor= 'red'></StatusBar>
+         <StatusBar  backgroundColor= '#f1f5f8' barStyle="dark-content"></StatusBar>
          <Image style={styles.image} source={require("./assets/logo.png")}></Image>
          <View style={styles.login}>
             <TextInput placeholder="Kullanıcı Adı" textContentType="username" inlineImageLeft="user" inlineImagePadding={10} style={styles.id}></TextInput>
@@ -23,8 +23,16 @@ export default class LoginPage extends Component {
                     
                </CheckBox>
                <Text>Fcuk Man</Text>
+             
             </View>
          </View>
+         <Button title="Giriş" onPress={
+             ()=>{
+                 push('HomePage');
+             }
+         } > 
+
+         </Button>
         
       </View>
     );
@@ -35,7 +43,7 @@ const styles=StyleSheet.create({
         flex:1,
         alignItems:'center',
         
-        backgroundColor:'orange'
+        backgroundColor:'#1c3faa'
     },
     id:{
         
@@ -63,7 +71,7 @@ const styles=StyleSheet.create({
         height:'25%',
         alignItems:'center',
         marginTop:'20%',
-        backgroundColor:'tomato',
+        backgroundColor:'#f1f5f8',
         borderRadius:20,
         justifyContent:'center',
         flexDirection:'column'

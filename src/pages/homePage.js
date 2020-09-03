@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,TouchableOpacity,Image,StyleSheet,StatusBar} from 'react-native'
+import { color } from 'react-native-reanimated';
 
   
    
@@ -79,7 +80,7 @@ export default class HomePage extends Component {
         
         return (
             <View style={styles.container}>
-                <StatusBar backgroundColor='white'></StatusBar>
+                <StatusBar backgroundColor='white' translucent={true} showHideTransition="slide" barStyle="dark-content" ></StatusBar>
                 <FlatList
                     numColumns={3}
                     data={this.state.DATA}
@@ -93,18 +94,17 @@ export default class HomePage extends Component {
 
 const styles=StyleSheet.create({
     container:{
-
         flex:1,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor:'white'
+        backgroundColor:'#f1f5f8'
     },
     item:{
-
+        
         width:'33%',
         height:'25%',
         alignItems:'center',
-        marginTop:'10%'
+        marginTop:'15%'
         
     },
     image:{
