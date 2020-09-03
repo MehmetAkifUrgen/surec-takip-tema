@@ -12,60 +12,76 @@ export default class HomePage extends Component {
             {
                 "id": '1',
                 "title": 'Müşteriler',
-                "src":require('./assets/homeAssets/1.png')
+                "src":require('./assets/homeAssets/1.png'),
+                "path" : "Musteriler"
               },{
                 "id": '2',
                 "title": 'Sipariş Süreçleri',
-                "src":require('./assets/homeAssets/2.png')
+                "src":require('./assets/homeAssets/2.png'),
+                "path" : "SiparisSurecleri"
               },{
                     "id": '3',
                     "title": 'Siparişler',
-                    "src":require('./assets/homeAssets/3.png')
+                    "src":require('./assets/homeAssets/3.png'),
+                    "path" : "Siparisler"
               }, {
                   "id": '4',
                   "title": 'Personeller',
-                  "src":require('./assets/homeAssets/4.png')
+                  "src":require('./assets/homeAssets/4.png'),
+                  "path" : "Personeller"
               },{
                   "id": '5',
                   "title": 'İstatistikler',
-                  "src":require('./assets/homeAssets/5.png')
+                  "src":require('./assets/homeAssets/5.png'),
+                  "path" : "Istatistikler"
               },{
                   "id": '6',
                   "title": 'Projeler',
-                  "src":require('./assets/homeAssets/6.png')
+                  "src":require('./assets/homeAssets/6.png'),
+                  "path" : "Projeler"
               },{
                   "id": '7',
                   "title": 'İşçiler',
-                  "src":require('./assets/homeAssets/7.png')
+                  "src":require('./assets/homeAssets/7.png'),
+                  "path" : "Isciler"
               },{
                   "id": '8',
                   "title": 'Kesim Listeleri',
-                  "src":require('./assets/homeAssets/8.png')
+                  "src":require('./assets/homeAssets/8.png'),
+                  "path" : "KesimListeleri"
               },{
                   "id": '9',
                   "title": 'İş Emirleri',
-                  "src":require('./assets/homeAssets/9.png')
+                  "src":require('./assets/homeAssets/9.png'),
+                  "path" : "IsEmirleri"
               },{
                   "id": '10',
                   "title": 'Ürün Ağaçları',
-                  "src":require('./assets/homeAssets/10.png')
+                  "src":require('./assets/homeAssets/10.png'),
+                  "path" : "UrunAgacları"
               },{
                   "id": '11',
                   "title": 'Tezgahlar',
-                  "src":require('./assets/homeAssets/11.png')
+                  "src":require('./assets/homeAssets/11.png'),
+                  "path" : "Tezgahlar"
               },{
                   "id": '12',
                   "title": 'Operasyonlar',
-                  "src":require('./assets/homeAssets/12.png')
+                  "src":require('./assets/homeAssets/12.png'),
+                  "path" : "Operasyonlar"
               },
           ],
           
       };
 
       renderItem = ({ item}) => {
-       
+        const { navigate , push, goBack} = this.props.navigation
         return(
-            <TouchableOpacity style={styles.item}>
+            <TouchableOpacity style={styles.item} onPress={
+                () => {
+                    push(item.path);
+                }
+            } >
                 
                 <Image style={styles.image} source={item.src}></Image>
                 <Text style={styles.title}>{item.title}</Text>
@@ -99,13 +115,11 @@ const styles=StyleSheet.create({
         alignItems:'center',
         backgroundColor:'#f1f5f8'
     },
-    item:{
-        
+    item:{ 
         width:'33%',
-        height:'25%',
+        height:'50%',
         alignItems:'center',
-        marginTop:'15%'
-        
+        marginTop:'15%',  
     },
     image:{
         width:100,
