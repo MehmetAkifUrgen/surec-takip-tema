@@ -14,8 +14,13 @@ export default class Musteriler extends Component {
         const { navigate , push, goBack} = this.props.navigation
         return(
             <TouchableOpacity style={styles.item} >               
-                <Image style={styles.image} source={item.src}></Image>
+                <Image style={styles.image} source={require('../assets/person.png')}></Image>
                 <Text style={styles.title}>{item.title}</Text>
+                <View style={styles.aramaView}>
+                        <Image style={styles.arama} source={require('../assets/telephone.png')}></Image>
+                        <Image style={styles.arama} source={require('../assets/whatsapp.png')}></Image>
+                </View>
+                
             </TouchableOpacity>
     
         );
@@ -25,7 +30,7 @@ export default class Musteriler extends Component {
     render() {
         return (
             <View style={styles.main}>
-                <StatusBar backgroundColor='#1c3faa'></StatusBar>
+                <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
                 <FlatList
                     
                     renderItem={this.renderItem}
@@ -41,7 +46,7 @@ export default class Musteriler extends Component {
 const styles=StyleSheet.create({
     main:{
         
-        backgroundColor:'#1c3faa'
+        backgroundColor:'#f1f5f7'
     },
   
     item:{ 
@@ -50,10 +55,11 @@ const styles=StyleSheet.create({
         paddingVertical: 10,
         borderWidth: 1,
         borderColor: '#1c3faa',  
-        backgroundColor:'#f1f5f7'  ,
+        backgroundColor:'#1c3faa'  ,
         borderRadius:10 ,
-        marginHorizontal:'10%',
-        marginVertical:'2%'
+        marginHorizontal:'7%',
+        marginVertical:'2%',
+        alignItems:'center'
         
     },
     image:{
@@ -61,11 +67,23 @@ const styles=StyleSheet.create({
         height: 50,
         borderRadius: 25,
         marginHorizontal: 10,
-        borderWidth:3,
-        borderColor:'#1c3faa'
+        
+        
     },
     title:{
-        color:'black',
-        fontSize:20
+        color:'white',
+        fontSize:15,
+        fontStyle:'italic'
+    },
+    arama:{
+        width: 25,
+        height: 25,
+        marginHorizontal:10
+    },
+    aramaView:{
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'flex-end',  
+        marginRight:10
     }
 })
