@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,TouchableOpacity,Image,StyleSheet,StatusBar} from 'react-native'
 import { color } from 'react-native-reanimated';
+import PropTypes from 'prop-types';
 
   
    
@@ -107,6 +108,7 @@ export default class HomePage extends Component {
         )
     }
 }
+
 
 const styles=StyleSheet.create({
     container:{

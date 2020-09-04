@@ -57,7 +57,12 @@ const appNavigator = createStackNavigator({
     Musteriler : {
         screen:Musteriler,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerStyle:{
+                backgroundColor:'pink'
+            }
         }
     },
     Operasyonlar : {
