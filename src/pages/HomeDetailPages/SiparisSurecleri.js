@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet,StatusBar,Image,FlatList,TouchableOpacity ,ScrollView, SafeAreaView, SectionList} from 'react-native'
+import { Text, View,StyleSheet,StatusBar,Image,FlatList,TouchableOpacity ,ScrollView, SafeAreaView, SectionList, VirtualizedList, ListView} from 'react-native'
 import SiparisSurecleriData from '../data/SiparisSurecleriData'  ;
 var Yeni = new SiparisSurecleriData();
 export default class SiparisSurecleri extends Component {
@@ -13,8 +13,6 @@ export default class SiparisSurecleri extends Component {
             <TouchableOpacity style={styles.item} >               
                 <Image style={styles.image} source={item.src}></Image>
                 <Text style={styles.title}>{item.title}</Text>
-                
-                
             </TouchableOpacity>
     
         );
@@ -28,33 +26,66 @@ export default class SiparisSurecleri extends Component {
        }
     render() {
         return (
-            <SafeAreaView style={styles.main}>
+            <ScrollView style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
+           
                 <Text style={styles.uretim}>Birimler</Text>
-                <FlatList
-                    renderItem={this.renderItem}
-                    data={this.state.DATA}
-                    keyExtractor={item => item.id}
-                    
-                />
+
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/SiparisSurecleri/1.png')}></Image>
+                    <Text style={styles.title}>Müşteriler Listesi</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/SiparisSurecleri/2.png')}></Image>
+                    <Text style={styles.title}>Pazarlama-Satış</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/SiparisSurecleri/3.png')}></Image>
+                    <Text style={styles.title}>Projelendirme Birimi</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/SiparisSurecleri/4.png')}></Image>
+                    <Text style={styles.title}>Üretim Planlama Birimi</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/SiparisSurecleri/5.png')}></Image>
+                    <Text style={styles.title}>Satın Alma Planlama Birimi</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/SiparisSurecleri/6.png')}></Image>
+                    <Text style={styles.title}>Transfer Edilen</Text>
+                </TouchableOpacity>
+                
                 
                 <Text style={styles.uretim}>Üretim Durumu</Text>
-                <FlatList
-                    renderItem={this.renderItem}
-                    data={this.state.DATA}
-                    keyExtractor={item => item.id}
-                />
-             
-         
 
-            </SafeAreaView>  
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/UretimDurumu/1.png')}></Image>
+                    <Text style={styles.title}>Transfer Edilen</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/UretimDurumu/2.png')}></Image>
+                    <Text style={styles.title}>Transfer Edilen</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/UretimDurumu/3.png')}></Image>
+                    <Text style={styles.title}>Transfer Edilen</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.item} >               
+                    <Image style={styles.image} source={require('../assets/UretimDurumu/4.png')}></Image>
+                    <Text style={styles.title}>Transfer Edilen</Text>
+                </TouchableOpacity>
+                
+        </ScrollView>  
             
         )
     }
 }
 const styles=StyleSheet.create({
     main:{
-        
+        flexDirection:'column',
         backgroundColor:'#f1f5f7'
     },
   
@@ -81,8 +112,8 @@ const styles=StyleSheet.create({
     },
     title:{
         color:'white',
-        fontSize:15,
-        fontStyle:'italic'
+        fontSize:16,
+        
     },
     arama:{
         width: 25,
@@ -98,7 +129,13 @@ const styles=StyleSheet.create({
     uretim:{
         textAlign:'center',
         fontSize:20,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        color:'white',
+        marginHorizontal:100,
+        marginVertical:20,
+        backgroundColor:'purple',
+        borderRadius:20
+        
     }
 })
 
