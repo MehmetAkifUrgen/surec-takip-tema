@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar} from 'react-native'
-import HomePage from '../homePage';
+import PersonelData from  '../data/PersonelData.js';
 
-var Yeni = new HomePage();
+var Yeni = new PersonelData();
 
 export default class Musteriler extends Component {
 

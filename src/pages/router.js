@@ -76,7 +76,14 @@ const appNavigator = createStackNavigator({
     Personeller : {
         screen:Personeller,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'Personeller',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     Projeler : {
@@ -88,13 +95,27 @@ const appNavigator = createStackNavigator({
     Siparisler : {
         screen:Siparisler,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'Siparişler',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     SiparisSurecleri : {
         screen:SiparisSurecleri,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'Sipariş Süreçleri',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     Tezgahlar : {
