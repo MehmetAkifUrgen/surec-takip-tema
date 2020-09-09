@@ -6,24 +6,7 @@ export default class SiparisSurecleri extends Component {
     state={
         DATA:Yeni.state.DATA
     }
-
-    renderItem = ({ item}) => {
-        const { navigate , push, goBack} = this.props.navigation
-        return(
-            <TouchableOpacity style={styles.item} >               
-                <Image style={styles.image} source={item.src}></Image>
-                <Text style={styles.title}>{item.title}</Text>
-            </TouchableOpacity>
-    
-        );
-        
-        
-       };
-       getHeader = ()=> {
-            return(
-                <Text>Üretim Durumu</Text>
-            )
-       }
+       
     render() {
         return (
             <ScrollView style={styles.main}>
@@ -115,17 +98,7 @@ const styles=StyleSheet.create({
         fontSize:16,
         
     },
-    arama:{
-        width: 25,
-        height: 25,
-        marginHorizontal:10
-    },
-    aramaView:{
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'flex-end',  
-        marginRight:10
-    },
+    
     uretim:{
         textAlign:'center',
         fontSize:20,

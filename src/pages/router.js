@@ -27,31 +27,60 @@ const appNavigator = createStackNavigator({
     HomePage : {
         screen:HomePage,
         navigationOptions:{
-            headerShown:false
+            headerShown:false,
+            
         }
     },
     Isciler : {
         screen:Isciler,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'İşçiler',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     IsEmirleri : {
         screen:IsEmirleri,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'İş Emirleri',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     Istatistikler : {
         screen:Istatistikler,
         navigationOptions:{
-           
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'İstatistikler',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     KesimListeleri : {
         screen:KesimListeleri,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'Kesim Listeleri',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     Musteriler : {
@@ -89,7 +118,14 @@ const appNavigator = createStackNavigator({
     Projeler : {
         screen:Projeler,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'Projeler',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     Siparisler : {

@@ -59,7 +59,7 @@ export default class HomePage extends Component {
                   "id": '10',
                   "title": 'Ürün Ağaçları',
                   "src":require('./assets/homeAssets/10.png'),
-                  "path" : "UrunAgacları"
+                  "path" : "UrunAgaclari"
               },{
                   "id": '11',
                   "title": 'Tezgahlar',
@@ -97,8 +97,8 @@ export default class HomePage extends Component {
         
         return (
             <View style={styles.container}>
-                <StatusBar backgroundColor='white' translucent={true} showHideTransition="slide" barStyle="dark-content" ></StatusBar>
-                <FlatList
+                <StatusBar backgroundColor='#1c3faa' translucent={true} showHideTransition="slide" barStyle="light-content" ></StatusBar>
+                <FlatList style={{marginVertical:60,marginHorizontal:15}}
                     numColumns={3}
                     data={this.state.DATA}
                     renderItem={this.renderItem}
@@ -115,19 +115,24 @@ const styles=StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor:'#f1f5f8'
+        backgroundColor:'#FCA3B7'
     },
     item:{ 
         width:'33%',
-        height:'50%',
+        height:'80%',
         alignItems:'center',
-        marginTop:'15%',  
+        marginVertical:'5%', 
+        
     },
     image:{
         width:100,
-        height:100
+        height:100,
+        
     },
     title:{
-        fontSize:16
+        fontSize:16,
+        fontWeight:'bold',
+        color:'#1c3faa',
+        textAlign:'center'
     }
 })
