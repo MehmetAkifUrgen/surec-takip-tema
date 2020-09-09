@@ -86,16 +86,18 @@ const styles=StyleSheet.create({
         
     },
     image:{
-        width: 50,
-        height: 50,
-        borderRadius: 25,
+        width: 60,
+        height: 60,
+        borderRadius: 30,
         marginHorizontal: 10,
-        
+        borderWidth:2,
+        borderColor:'white'
         
     },
     title:{
         color:'white',
-        fontSize:16,
+        fontSize:17,
+        fontStyle:'italic'
         
     },
     

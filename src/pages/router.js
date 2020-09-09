@@ -147,7 +147,7 @@ const appNavigator = createStackNavigator({
             headerTintColor:'white',
             headerStatusBarHeight:20,
             headerTitleAlign:'center',
-            headerTitle:'Sipariş Süreçleri',
+            headerTitle:'SİPARİŞ SÜREÇLERİ',
             headerStyle:{
                 backgroundColor:'#1c3faa',
                 

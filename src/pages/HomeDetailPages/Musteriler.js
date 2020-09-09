@@ -46,7 +46,8 @@ export default class Musteriler extends Component {
 const styles=StyleSheet.create({
     main:{
         
-        backgroundColor:'#f1f5f7'
+        backgroundColor:'#f1f5f7',
+        marginVertical:'4%'
     },
   
     item:{ 

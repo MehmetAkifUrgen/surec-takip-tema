@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text,StyleSheet,TextInput,StatusBar,Image , Button} from 'react-native';
+import { View, Text,StyleSheet,TextInput,StatusBar,Image} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 
@@ -26,13 +27,13 @@ export default class LoginPage extends Component {
              
             </View>
          </View>
-         <Button title="Giriş" onPress={
+         <TouchableOpacity style={styles.buton}  onPress={
              ()=>{
-                 push('HomePage');
+                 navigate('HomePage');
              }
-         } > 
-
-         </Button>
+         }> 
+            <Text style={{textAlign:'center', fontSize:18}}>Giriş</Text>
+         </TouchableOpacity>
         
       </View>
     );
@@ -74,11 +75,19 @@ const styles=StyleSheet.create({
         backgroundColor:'#f1f5f8',
         borderRadius:20,
         justifyContent:'center',
-        flexDirection:'column'
+        flexDirection:'column',
+        marginBottom:50
     },
     checbox:{
         flexDirection:'row',
         justifyContent:'flex-start',
         alignItems:'flex-start'
+    },
+    buton:{
+       width:80,
+       height:40,
+       backgroundColor:'white',
+       borderRadius:25,
+       justifyContent:'center'
     }
 });

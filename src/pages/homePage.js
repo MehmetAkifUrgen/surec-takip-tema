@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
    
 
 export default class HomePage extends Component {
+    
 
     state={
         DATA : [
@@ -98,7 +99,7 @@ export default class HomePage extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar backgroundColor='#1c3faa' translucent={true} showHideTransition="slide" barStyle="light-content" ></StatusBar>
-                <FlatList style={{marginVertical:60,marginHorizontal:15}}
+                <FlatList style={{marginVertical:70,marginHorizontal:15}}
                     numColumns={3}
                     data={this.state.DATA}
                     renderItem={this.renderItem}
@@ -115,7 +116,7 @@ const styles=StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor:'#FCA3B7'
+        backgroundColor:'white'
     },
     item:{ 
         width:'33%',
@@ -125,12 +126,12 @@ const styles=StyleSheet.create({
         
     },
     image:{
-        width:100,
-        height:100,
+        width:80,
+        height:80,
         
     },
     title:{
-        fontSize:16,
+        fontSize:18,
         fontWeight:'bold',
         color:'#1c3faa',
         textAlign:'center'
