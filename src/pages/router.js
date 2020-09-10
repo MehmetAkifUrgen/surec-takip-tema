@@ -17,6 +17,7 @@ import SiparisSurecleri from './HomeDetailPages/SiparisSurecleri';
 import Tezgahlar from './HomeDetailPages/Tezgahlar';
 import UrunAgaclari from './HomeDetailPages/UrunAgaclari';
 import TezgahYogunluk from './IstatistiklerPages/tezgahYogunluk'
+import Uretim from './IstatistiklerPages/uretim'
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -195,6 +196,19 @@ const appNavigator = createStackNavigator({
             headerStatusBarHeight:20,
             headerTitleAlign:'center',
             headerTitle:'Tezgah Yoğunluğu',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    Uretim:{
+        screen:Uretim,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'ÜRETİM İSTATİSTİKLERİ',
             headerStyle:{
                 backgroundColor:'#1c3faa',
                 

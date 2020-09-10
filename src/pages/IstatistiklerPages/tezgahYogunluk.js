@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet, Dimensions } from 'react-native'
+import { Text, View,StyleSheet, TouchableOpacity } from 'react-native'
 import {
-    LineChart,
-    BarChart,
-    PieChart,
-    ProgressChart,
-    ContributionGraph,
-    StackedBarChart
+    PieChart
   } from "react-native-chart-kit";
+  import { ProgressCircle } from 'react-native-svg-charts'
+
+
+
+
 
 export default class TezgahYogunluk extends Component {
+
     
     render() {
         const data = [
@@ -55,6 +56,56 @@ export default class TezgahYogunluk extends Component {
                     
                 />
                 
+                <View style={styles.list}>
+                    <TouchableOpacity style={styles.item} >               
+                    
+                    <View>
+                        <Text> 1. İstasyon</Text>
+                        <Text> 1. İstasyon</Text>
+                        <Text> 1. İstasyon</Text>
+                    </View>
+                        <View style={{flex:1,justifyContent:'flex-end',flexDirection:'row',marginRight:10}}>
+                            <ProgressCircle style={styles.circle} progress={0.84} progressColor={'tomato'} >
+                            <Text style={{textAlign:'center',marginTop:20}}> %84</Text>
+                        </ProgressCircle>
+                        </View>
+                    </TouchableOpacity>
+                    
+                </View>
+
+                <View style={styles.list}>
+                    <TouchableOpacity style={styles.item} >               
+                    
+                    <View>
+                        <Text> 1. İstasyon</Text>
+                        <Text> 1. İstasyon</Text>
+                        <Text> 1. İstasyon</Text>
+                    </View>
+                        <View style={{flex:1,justifyContent:'flex-end',flexDirection:'row',marginRight:10}}>
+                            <ProgressCircle style={styles.circle} progress={0.56} progressColor={'tomato'} >
+                            <Text style={{textAlign:'center',marginTop:20}}> %56</Text>
+                        </ProgressCircle>
+                        </View>
+                    </TouchableOpacity>
+                    
+                </View>
+
+                <View style={styles.list}>
+                    <TouchableOpacity style={styles.item} >               
+                    
+                    <View>
+                        <Text> 1. İstasyon</Text>
+                        <Text> 1. İstasyon</Text>
+                        <Text> 1. İstasyon</Text>
+                    </View>
+                        <View style={{flex:1,justifyContent:'flex-end',flexDirection:'row',marginRight:10}}>
+                            <ProgressCircle style={styles.circle} progress={1} progressColor={'tomato'} >
+                            <Text style={{textAlign:'center',marginTop:20}}> %100</Text>
+                        </ProgressCircle>
+                        </View>
+                    </TouchableOpacity>
+                    
+                </View>
 
             </View>
         )
@@ -80,7 +131,34 @@ const styles=StyleSheet.create({
         elevation: 16,
         borderRadius:25
     },
-    barChart:{
-        backgroundColor:'white'
+    item:{ 
+        flex:1,
+        flexDirection: 'row',
+        marginTop:30,
+        backgroundColor:'white'  ,
+        borderRadius:10 ,
+        padding:10,
+       
+        shadowColor: "white",
+        shadowOffset: {
+	        width: 0,
+	        height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 12,
+        
+        
+        
+    },
+    list:{
+        
+        flexDirection:'row',
+        width:350
+    },
+    circle:{
+         height: 60 , width:60,
     }
+    
 })

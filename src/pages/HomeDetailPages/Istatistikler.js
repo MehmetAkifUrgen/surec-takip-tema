@@ -17,7 +17,11 @@ export default class Istatistikler extends Component {
                     <Text style={styles.title}>Tezgah Yoğunluk Yüzdeleri</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.item} >               
+                <TouchableOpacity style={styles.item}  onPress={
+                    () => {
+                        navigate('Uretim')
+                    }
+                }>               
                     <Image style={styles.image} source={require('../assets/Istatistikler/2.png')}></Image>
                     <Text style={styles.title}>Üretim İstatistikleri</Text>
                 </TouchableOpacity>
