@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import { Text, View ,TouchableOpacity,StyleSheet,Image} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
+import TezgahYogunluk from '../IstatistiklerPages/tezgahYogunluk'
 
 export default class Istatistikler extends Component {
     render() {
+        const { navigate , push, goBack} = this.props.navigation
         return (
             <ScrollView style={styles.main}>
-                <TouchableOpacity style={styles.item} >               
+                <TouchableOpacity style={styles.item} onPress={
+                    () => {
+                        navigate('TezgahYogunluk')
+                    }
+                }>               
                     <Image style={styles.image} source={require('../assets/Istatistikler/1.png')}></Image>
                     <Text style={styles.title}>Tezgah Yoğunluk Yüzdeleri</Text>
                 </TouchableOpacity>
