@@ -99,7 +99,14 @@ const appNavigator = createStackNavigator({
     Operasyonlar : {
         screen:Operasyonlar,
         navigationOptions:{
-           
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'OPERASYONLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     Personeller : {
@@ -157,13 +164,27 @@ const appNavigator = createStackNavigator({
     Tezgahlar : {
         screen:Tezgahlar,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'TEZGAHLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
     UrunAgaclari : {
         screen:UrunAgaclari,
         navigationOptions:{
-            
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'ÜRÜN AĞAÇLARI',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+            }
         }
     },
 

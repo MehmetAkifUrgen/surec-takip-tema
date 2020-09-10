@@ -99,12 +99,15 @@ export default class HomePage extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar backgroundColor='#1c3faa' translucent={true} showHideTransition="slide" barStyle="light-content" ></StatusBar>
-                <FlatList style={{marginVertical:70,marginHorizontal:15}}
+            <View style={styles.list}>
+                <FlatList
+                    contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
                     numColumns={3}
                     data={this.state.DATA}
                     renderItem={this.renderItem}
                     keyExtractor={item => item.id}
                 />
+            </View>
             </View>
         )
     }
@@ -114,26 +117,42 @@ export default class HomePage extends Component {
 const styles=StyleSheet.create({
     container:{
         flex:1,
-        justifyContent:'center',
-        alignItems:'center',
-        backgroundColor:'white'
+        backgroundColor:'white',
     },
     item:{ 
-        width:'33%',
-        height:'80%',
+        width:100,
         alignItems:'center',
         marginVertical:'5%', 
+        marginHorizontal:10,
+        backgroundColor:'white',
+        borderRadius:5,
+        shadowColor: "white",
+        shadowOffset: {
+	        width: 0,
+	        height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 8,
         
     },
     image:{
-        width:80,
-        height:80,
+        width:90,
+        height:90,
         
     },
     title:{
-        fontSize:18,
+        fontSize:16,
         fontWeight:'bold',
         color:'#1c3faa',
         textAlign:'center'
+    },
+    list:{
+        flex:1,
+        alignItems:'center',
+        backgroundColor:'white',
+        
+      
     }
 })

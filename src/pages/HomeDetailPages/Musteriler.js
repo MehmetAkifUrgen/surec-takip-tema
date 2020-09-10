@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar} from 'react-native'
 import PersonelData from  '../data/PersonelData.js';
+import {Linking} from 'react-native'
 
 var Yeni = new PersonelData();
 
@@ -17,8 +18,20 @@ export default class Musteriler extends Component {
                 <Image style={styles.image} source={require('../assets/person.png')}></Image>
                 <Text style={styles.title}>{item.title}</Text>
                 <View style={styles.aramaView}>
+                    <TouchableOpacity onPress={
+                         () =>{
+                            Linking.openURL(`tel:${9999}`)
+                        }
+                    }>
                         <Image style={styles.arama} source={require('../assets/telephone.png')}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={
+                        () => {
+                            Linking.openURL('whatsapp://send?text=&phone=5388757998')
+                        }
+                    }>
                         <Image style={styles.arama} source={require('../assets/whatsapp.png')}></Image>
+                    </TouchableOpacity>
                 </View>
                 
             </TouchableOpacity>
@@ -32,7 +45,7 @@ export default class Musteriler extends Component {
             <View style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
                 <FlatList
-                    
+                    contentContainerStyle={{marginTop:'4%'}}
                     renderItem={this.renderItem}
                     data={this.state.DATA}
                     keyExtractor={item => item.id}
@@ -46,21 +59,32 @@ export default class Musteriler extends Component {
 const styles=StyleSheet.create({
     main:{
         
-        backgroundColor:'#f1f5f7',
-        marginVertical:'4%'
+        backgroundColor:'white',
+        
+        
     },
   
     item:{ 
         flex:1,
         flexDirection: 'row',
         paddingVertical: 10,
-        borderWidth: 1,
-        borderColor: '#1c3faa',  
-        backgroundColor:'#1c3faa'  ,
+        
+          
+        backgroundColor:'white'  ,
         borderRadius:10 ,
         marginHorizontal:'7%',
         marginVertical:'2%',
-        alignItems:'center'
+        alignItems:'center',
+        shadowColor: "white",
+        shadowOffset: {
+	        width: 0,
+	        height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 16,
+        
         
     },
     image:{
@@ -68,12 +92,14 @@ const styles=StyleSheet.create({
         height: 50,
         borderRadius: 25,
         marginHorizontal: 10,
+        borderWidth:1,
+        borderColor:'black'
         
         
     },
     title:{
-        color:'white',
-        fontSize:15,
+        color:'#1c3faa',
+        fontSize:17,
         fontStyle:'italic'
     },
     arama:{
