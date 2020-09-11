@@ -18,6 +18,7 @@ import Tezgahlar from './HomeDetailPages/Tezgahlar';
 import UrunAgaclari from './HomeDetailPages/UrunAgaclari';
 import TezgahYogunluk from './IstatistiklerPages/tezgahYogunluk'
 import Uretim from './IstatistiklerPages/uretim'
+import ProjeIstatistikleri from './IstatistiklerPages/projeIstatistikleri'
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -209,6 +210,19 @@ const appNavigator = createStackNavigator({
             headerStatusBarHeight:20,
             headerTitleAlign:'center',
             headerTitle:'ÜRETİM İSTATİSTİKLERİ',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    ProjeIstatistikleri:{
+        screen:ProjeIstatistikleri,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'PROJE İSTATİSTİKLERİ',
             headerStyle:{
                 backgroundColor:'#1c3faa',
                 

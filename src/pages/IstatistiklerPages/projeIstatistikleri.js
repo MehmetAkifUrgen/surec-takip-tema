@@ -8,7 +8,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 
-export default class Uretim extends Component {
+export default class ProjeIstatistikleri extends Component {
   state={
     
     dataGun:{
@@ -16,7 +16,7 @@ export default class Uretim extends Component {
       datasets: [
           {
             data: [
-            0.5,0.5,1,1,0.5
+            1,0.5,0.5,1,1
           
             ]
           }
@@ -49,7 +49,7 @@ export default class Uretim extends Component {
       datasets: [
           {
             data: [
-              0.5,0.5,1,1,1
+              0.5,0.5,1,1,0.5
             ]
           }
       ]
@@ -94,16 +94,14 @@ export default class Uretim extends Component {
                                 
                                     yAxisInterval={1} // optional, defaults to 1
                                     chartConfig={{
-                                    backgroundColor: "#ff9e9d",
-                                    backgroundGradientFrom: "#ff9e9d",
-                                    backgroundGradientTo: "#ff9e9d",
-                                    
+                                    backgroundColor: "#d6a5a3",
+                                    backgroundGradientFrom: "#d6a5a3",
+                                    backgroundGradientTo: "#d6a5a3",
                                     decimalPlaces: 2, // optional, defaults to 2dp
                                     color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                                     labelColor: (opacity = 1) => `white`,
                                     style: {
-                                        borderRadius: 16,
-                                        
+                                        borderRadius: 16
                                     },
                                     propsForDots: {
                                         r: "6",
@@ -114,8 +112,7 @@ export default class Uretim extends Component {
                                     bezier
                                     style={{
                                     marginVertical: 8,
-                                    borderRadius: 16,
-                                    
+                                    borderRadius: 16
                                     }}
                                 />
                         </View>

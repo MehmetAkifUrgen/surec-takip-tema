@@ -26,7 +26,10 @@ export default class Istatistikler extends Component {
                     <Text style={styles.title}>Üretim İstatistikleri</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.item} >               
+                <TouchableOpacity style={styles.item} onPress={
+                    () => {
+                        navigate('ProjeIstatistikleri')
+                    }} >               
                     <Image style={styles.image} source={require('../assets/Istatistikler/3.png')}></Image>
                     <Text style={styles.title}>Proje İstatistikleri</Text>
                 </TouchableOpacity>
