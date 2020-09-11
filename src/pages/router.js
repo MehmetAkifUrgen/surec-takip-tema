@@ -19,6 +19,7 @@ import UrunAgaclari from './HomeDetailPages/UrunAgaclari';
 import TezgahYogunluk from './IstatistiklerPages/tezgahYogunluk'
 import Uretim from './IstatistiklerPages/uretim'
 import ProjeIstatistikleri from './IstatistiklerPages/projeIstatistikleri'
+import DetaylarMusteri from './MusterilerPages/detaylarMusteri'
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -223,6 +224,19 @@ const appNavigator = createStackNavigator({
             headerStatusBarHeight:20,
             headerTitleAlign:'center',
             headerTitle:'PROJE İSTATİSTİKLERİ',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    DetaylarMusteri:{
+        screen:DetaylarMusteri,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
             headerStyle:{
                 backgroundColor:'#1c3faa',
                 

@@ -13,8 +13,15 @@ export default class Musteriler extends Component {
 
     renderItem = ({ item}) => {
         const { navigate , push, goBack} = this.props.navigation
+        const isim=item.title
+        const telefon=item.telefon
+        const email=item.email
         return(
-            <TouchableOpacity style={styles.item} >               
+            <TouchableOpacity style={styles.item} onPress={
+                ()=>{
+                    navigate("DetaylarMusteri",{isim,telefon,email})
+                }
+            }>               
                 <Image style={styles.image} source={require('../assets/person.png')}></Image>
                 <Text style={styles.title}>{item.title}</Text>
                 <View style={styles.aramaView}>
