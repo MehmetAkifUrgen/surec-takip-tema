@@ -79,7 +79,7 @@ export default class KesimListeleri extends Component {
 
 const styles=StyleSheet.create({
     main:{
-        
+        flex:1,
         backgroundColor:'white'
     },
     item:{ 

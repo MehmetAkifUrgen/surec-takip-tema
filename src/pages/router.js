@@ -24,6 +24,8 @@ import PazarlamaSatis from './SiparisSurecleri/PazarlamaSatis'
 import PazarlamaSatisDetay from './SiparisSurecleri/PazarlamaSatisDetay'
 import ProjelendirmeBirimi from './SiparisSurecleri/ProjelendirmeBirimi'
 import ProjelendirmeBirimiDetay from './SiparisSurecleri/ProjelendirmeBirimiDetay'
+import TransferEdilen from './SiparisSurecleri/TransferEdilen'
+import TransferEdilenDetay from './SiparisSurecleri/TransferEdilenDetay'
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -288,6 +290,32 @@ const appNavigator = createStackNavigator({
     },
     ProjelendirmeBirimiDetay:{
         screen:ProjelendirmeBirimiDetay,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    TransferEdilen:{
+        screen:TransferEdilen,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'TRANSFER EDİLEN',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    TransferEdilenDetay:{
+        screen:TransferEdilenDetay,
         navigationOptions:{
             headerTintColor:'white',
             headerStatusBarHeight:20,

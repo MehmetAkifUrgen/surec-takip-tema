@@ -49,7 +49,11 @@ export default class SiparisSurecleri extends Component {
                     <Image style={styles.image} source={require('../assets/SiparisSurecleri/5.png')}></Image>
                     <Text style={styles.title}>Satın Alma Planlama Birimi</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.item} >               
+                <TouchableOpacity style={styles.item} onPress={
+                    ()=>{
+                        navigate('TransferEdilen')
+                    }
+                } >               
                     <Image style={styles.image} source={require('../assets/SiparisSurecleri/6.png')}></Image>
                     <Text style={styles.title}>Transfer Edilen</Text>
                 </TouchableOpacity>
