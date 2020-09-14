@@ -1,44 +1,51 @@
 import React, { Component } from 'react'
-import { Text, View ,TouchableOpacity,StyleSheet,StatusBar,FlatList} from 'react-native'
+import { Text, View,TouchableOpacity,StyleSheet,FlatList,StatusBar } from 'react-native'
 
 
-
-
-export default class Projeler extends Component {
+export default class PazarlamaSatis extends Component {
     state={
         DATA:[
             {
                 "id":"1",
-                "Musteri":"Yusuf Sürmeli mutfak",
-                "Durum":"Üretimde",
-                "Tarih":"13/09/2020"
-            },
-            {
-                "id":"2",
-                "Musteri":"Duha Yıldırım vestiyer",
-                "Durum":"Projelendirme",
-                "Tarih":"03/11/2020"
-            },
-            {
-                "id":"3",
-                "Musteri":"Akif Ürgen Antre",
-                "Durum":"Üretime Hazır",
-                "Tarih":"21/10/2020"
-            }
-        ]
+            "Siparis":"Vestiyer",
+            "Bolum":"Pazarlama Satış",
+            "Musteri":"Yusuf Sürmeli",
+            "Tarih":"25/12/2020",
+            "Personel":"Jimmy Durmaz"
+        },
+        {
+            "id":"2",
+            "Siparis":"Mutfak Dolabı",
+            "Bolum":"Pazarlama Satış",
+            "Musteri":"Duha Yıldırım",
+            "Tarih":"25/12/2020",
+            "Personel":"Emre Kılınç"
+        },
+    
+    ]
     }
-
+    
 
     renderItem = ({ item}) => {
         
         const { navigate , push, goBack} = this.props.navigation
+        
+        const musteri=item.Musteri
+        const siparis=item.Siparis
+        const tarih=item.Tarih
+        const personel=item.Personel
+        const bolum=item.Bolum
         return(
-            <TouchableOpacity style={styles.item} >               
+            <TouchableOpacity style={styles.item} onPress={
+                ()=>{
+                    navigate("PazarlamaSatisDetay",{musteri,siparis,tarih,personel,bolum})
+                }
+            } >               
                 
-                <Text style={styles.title}> {item.Musteri}</Text>
+                <Text style={styles.title}> {item.Siparis}</Text>
                 <View style={styles.durumView}>
-                    <Text style={{color:'green'}}>{item.Durum} </Text>
-                    <Text style={{color:'orange'}}>Tarih: {item.Tarih}</Text>
+                    <Text style={{color:'green'}}>{item.Bolum} </Text>
+                    <Text style={{color:'orange'}}>{item.Musteri}</Text>
                 </View>
                 
                 
@@ -55,9 +62,7 @@ export default class Projeler extends Component {
     }
 
     render() {
-        var year = new Date().getFullYear();
-        var date = new Date().getDate();
-        var month = new Date().getMonth() + 1;
+        
         return (
             <View style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
@@ -77,7 +82,7 @@ export default class Projeler extends Component {
 
 const styles=StyleSheet.create({
     main:{
-        
+        flex:1,
         backgroundColor:'white'
     },
     item:{ 
@@ -88,7 +93,7 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         backgroundColor:'white'  ,
         borderRadius:10 ,
-        borderColor:'blue',
+        borderColor:'#1c3faa',
         borderWidth:2,
         marginHorizontal:'7%',
         marginVertical:'2%',
@@ -100,7 +105,7 @@ const styles=StyleSheet.create({
         shadowOpacity: 0.58,
         shadowRadius: 16.00,
 
-        elevation: 16,
+        elevation: 8,
         
         
     },

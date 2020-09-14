@@ -1,43 +1,77 @@
 import React, { Component } from 'react'
-import { Text, View ,TouchableOpacity,StyleSheet,Image} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { Text, View ,TouchableOpacity,StyleSheet,StatusBar,FlatList} from 'react-native'
+
+
 
 
 export default class KesimListeleri extends Component {
+    state={
+        DATA:[
+            {
+                "id":"1",
+                "Musteri":"Yusuf Sürmeli mutfak",
+                "Durum":"Gövdeler",
+                "Bolum":"Gövdeler-Kesim Listesi"
+            },
+            {
+                "id":"2",
+                "Musteri":"Duha Yıldırım vestiyer",
+                "Durum":"KAPAK 1",
+                "Bolum":"Kapak1-Kesim Listesi"
+               
+            },
+            {
+                "id":"3",
+                "Musteri":"Akif Ürgen Antre",
+                "Durum":"KAPAK 2",
+                "Bolum":"Kapak2-Kesim Listesi"
+                
+            }
+        ]
+    }
+
+
+    renderItem = ({ item}) => {
+        
+        const { navigate , push, goBack} = this.props.navigation
+        return(
+            <TouchableOpacity style={styles.item} >               
+                
+                <Text style={styles.title}> {item.Musteri}</Text>
+                <View style={styles.durumView}>
+                    <Text style={{color:'green'}}>{item.Durum} </Text>
+                    <Text style={{color:'orange'}}> {item.Bolum}</Text>
+                </View>
+                
+                
+            </TouchableOpacity>
+    
+        );
+        
+        
+       };
+       renderFooter = () => {
+        return(
+            <View style={{height:30}}></View>
+        )
+    }
+
     render() {
         var year = new Date().getFullYear();
         var date = new Date().getDate();
         var month = new Date().getMonth() + 1;
         return (
-            <ScrollView style={styles.main}>
-                <TouchableOpacity style={styles.item} >               
-                    
-                    <Text style={styles.title}>Yusuf Sürmeli - Koltuk</Text>
-                    <Text style={{color:'pink'}}>Ayaklar-Kesim Listesi</Text>
-                    <View style={styles.dateView}>
-                        <Text style={styles.date}>{date}/{month}/{year}</Text>
-                    </View>
-                    
-                </TouchableOpacity>
+            <View style={styles.main}>
+                <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
+                <FlatList
+                    contentContainerStyle={{marginTop:'4%'}}
+                    renderItem={this.renderItem}
+                    data={this.state.DATA}
+                    keyExtractor={item => item.id}
+                    ListFooterComponent={this.renderFooter}
+                />
 
-                <TouchableOpacity style={styles.item} >               
-                    
-                    <Text style={styles.title}>Duha Yıldırım - Yatak</Text>
-                    <Text style={{color:'pink'}}>Yaylar-Kesim Listesi</Text>
-                    <View style={styles.dateView}>
-                        <Text style={styles.date}>{date}/{month}/{year}</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.item} >               
-                    
-                    <Text style={styles.title}>Mehmet Akif Ürgen - Masa</Text>
-                    <Text style={{color:'pink'}}>Tahta Kesimi-Kesim Listesi</Text>
-                    <View style={styles.dateView}>
-                        <Text style={styles.date}>{date}/{month}/{year}</Text>
-                    </View>
-                </TouchableOpacity>
-            </ScrollView>
+            </View>  
         )
     }
 }
@@ -45,34 +79,38 @@ export default class KesimListeleri extends Component {
 
 const styles=StyleSheet.create({
     main:{
-        flexDirection:'column',
-        backgroundColor:'#f1f5f7'
+        
+        backgroundColor:'white'
     },
     item:{ 
         flex:1,
         flexDirection: 'column',
         paddingVertical: 10,
         padding:10,
-        
-        backgroundColor:'#1c3faa'  ,
+        justifyContent:'center',
+        backgroundColor:'white'  ,
         borderRadius:10 ,
+        borderColor:'blue',
+        borderWidth:2,
         marginHorizontal:'7%',
         marginVertical:'2%',
-        
+        shadowColor: "white",
+        shadowOffset: {
+	        width: 0,
+	        height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 16,
         
         
     },
-    image:{
-        width: 70,
-        height: 70,
-        borderRadius: 35,
-        marginHorizontal: 10,
-        borderWidth:2,
-        borderColor:'white'
+   
         
-    },
+   
     title:{
-        color:'white',
+        color:'blue',
         fontSize:15,
         fontWeight:'500'
         
@@ -87,5 +125,10 @@ const styles=StyleSheet.create({
         
         textAlign:'right',
         color:'white'
+    },
+    durumView:{
+        flex:1,
+        flexDirection:'column',
+        alignItems:'flex-end'
     }
 })

@@ -8,25 +8,38 @@ export default class SiparisSurecleri extends Component {
     }
        
     render() {
+        const { navigate , push, goBack} = this.props.navigation
         return (
             <ScrollView style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
            
                 <Text style={styles.uretim}>Birimler</Text>
 
-                <TouchableOpacity style={styles.item} >               
+                <TouchableOpacity style={styles.item} onPress={
+                    ()=>{
+                        navigate('Musteriler')
+                    }
+                }>               
                     <Image style={styles.image} source={require('../assets/SiparisSurecleri/1.png')}></Image>
                     <Text style={styles.title}>Müşteriler Listesi</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.item} >               
+                <TouchableOpacity style={styles.item} onPress={
+                    ()=>{
+                        navigate('PazarlamaSatis')
+                    }
+                } >               
                     <Image style={styles.image} source={require('../assets/SiparisSurecleri/2.png')}></Image>
                     <Text style={styles.title}>Pazarlama-Satış</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.item} >               
                     <Image style={styles.image} source={require('../assets/SiparisSurecleri/3.png')}></Image>
-                    <Text style={styles.title}>Projelendirme Birimi</Text>
+                    <Text style={styles.title} onPress={
+                    ()=>{
+                        navigate('ProjelendirmeBirimi')
+                    }
+                }>Projelendirme Birimi</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.item} >               
                     <Image style={styles.image} source={require('../assets/SiparisSurecleri/4.png')}></Image>
@@ -46,19 +59,19 @@ export default class SiparisSurecleri extends Component {
 
                 <TouchableOpacity style={styles.item} >               
                     <Image style={styles.image} source={require('../assets/UretimDurumu/1.png')}></Image>
-                    <Text style={styles.title}>Transfer Edilen</Text>
+                    <Text style={styles.title}>Gecikmedeki Projeler </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.item} >               
                     <Image style={styles.image} source={require('../assets/UretimDurumu/2.png')}></Image>
-                    <Text style={styles.title}>Transfer Edilen</Text>
+                    <Text style={styles.title}>Beklemedeki Üretim Siparişleri</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.item} >               
                     <Image style={styles.image} source={require('../assets/UretimDurumu/3.png')}></Image>
-                    <Text style={styles.title}>Transfer Edilen</Text>
+                    <Text style={styles.title}>Üretimdeki  Üretim Siparişleri</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.item} >               
                     <Image style={styles.image} source={require('../assets/UretimDurumu/4.png')}></Image>
-                    <Text style={styles.title}>Transfer Edilen</Text>
+                    <Text style={styles.title}>Transfer Aşamasındaki Üretim Siparişleri</Text>
                 </TouchableOpacity>
                 
         </ScrollView>  
@@ -80,7 +93,7 @@ const styles=StyleSheet.create({
         borderColor: '#1c3faa',  
         backgroundColor:'#1c3faa'  ,
         borderRadius:10 ,
-        marginHorizontal:'7%',
+        marginHorizontal:'6%',
         marginVertical:'2%',
         alignItems:'center'
         
@@ -96,8 +109,9 @@ const styles=StyleSheet.create({
     },
     title:{
         color:'white',
-        fontSize:17,
-        fontStyle:'italic'
+        fontSize:16,
+        fontStyle:'italic',
+        textAlign:'center'
         
     },
     

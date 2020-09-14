@@ -27,15 +27,21 @@ export default class Isciler extends Component {
         
         
        };
+       renderFooter = () => {
+        return(
+            <View style={{height:30}}></View>
+        )
+    }
     render() {
         return (
             <View style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
                 <FlatList
-                    
+                    contentContainerStyle={{marginTop:20}}
                     renderItem={this.renderItem}
                     data={this.state.DATA}
                     keyExtractor={item => item.id}
+                    ListFooterComponent={this.renderFooter}
                 />
 
             </View>  

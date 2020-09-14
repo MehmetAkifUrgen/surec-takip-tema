@@ -20,6 +20,10 @@ import TezgahYogunluk from './IstatistiklerPages/tezgahYogunluk'
 import Uretim from './IstatistiklerPages/uretim'
 import ProjeIstatistikleri from './IstatistiklerPages/projeIstatistikleri'
 import DetaylarMusteri from './MusterilerPages/detaylarMusteri'
+import PazarlamaSatis from './SiparisSurecleri/PazarlamaSatis'
+import PazarlamaSatisDetay from './SiparisSurecleri/PazarlamaSatisDetay'
+import ProjelendirmeBirimi from './SiparisSurecleri/ProjelendirmeBirimi'
+import ProjelendirmeBirimiDetay from './SiparisSurecleri/ProjelendirmeBirimiDetay'
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -242,7 +246,61 @@ const appNavigator = createStackNavigator({
                 
           }
           }
+    },
+    PazarlamaSatis:{
+        screen:PazarlamaSatis,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'PAZARLAMA-SATIŞ',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    PazarlamaSatisDetay:{
+        screen:PazarlamaSatisDetay,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    ProjelendirmeBirimi:{
+        screen:ProjelendirmeBirimi,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'PROJELENDİRME BİRİMİ',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    ProjelendirmeBirimiDetay:{
+        screen:ProjelendirmeBirimiDetay,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
     }
+
+
 
 },{
     initialRouteName:"Login"

@@ -30,6 +30,11 @@ export default class Tezgahlar extends Component {
         
         
        };
+       renderFooter = () => {
+        return(
+            <View style={{height:30}}></View>
+        )
+    }
     render() {
         return (
             <View style={styles.main}>
@@ -39,6 +44,7 @@ export default class Tezgahlar extends Component {
                     renderItem={this.renderItem}
                     data={this.state.DATA}
                     keyExtractor={item => item.id}
+                    ListFooterComponent={this.renderFooter}
                 />
 
             </View>  

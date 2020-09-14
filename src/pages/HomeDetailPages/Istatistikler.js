@@ -47,19 +47,19 @@ const styles=StyleSheet.create({
         flexDirection: 'row',
         paddingVertical: 10,
         
-        
+        marginTop:20,
         backgroundColor:'#1c3faa'  ,
         borderRadius:10 ,
         marginHorizontal:'7%',
-        marginVertical:'2%',
+       
         alignItems:'center',
         
         
     },
     image:{
-        width: 70,
-        height: 70,
-        borderRadius: 35,
+        width: 60,
+        height: 60,
+        borderRadius: 30,
         marginHorizontal: 10,
         borderWidth:2,
         borderColor:'white'
