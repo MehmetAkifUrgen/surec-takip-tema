@@ -8,38 +8,63 @@ export default class Projeler extends Component {
     state={
         DATA:[
             {
-                "id":"1",
-                "Musteri":"Yusuf Sürmeli mutfak",
-                "Durum":"Üretimde",
-                "Tarih":"13/09/2020"
-            },
-            {
-                "id":"2",
-                "Musteri":"Duha Yıldırım vestiyer",
-                "Durum":"Projelendirme",
-                "Tarih":"03/11/2020"
-            },
-            {
-                "id":"3",
-                "Musteri":"Akif Ürgen Antre",
-                "Durum":"Üretime Hazır",
-                "Tarih":"21/10/2020"
-            }
-        ]
+            "id":"1",
+            "Siparis":"Vestiyer",
+            "Bolum":"Projelendirmede-Kapı",
+            "Musteri":"Yusuf Sürmeli",
+            "BaslangicTarihi":"25/12/2020",
+            "BitisTarihi":"12/11/2021",
+            "Personel":"Jimmy Durmaz",
+            "Sirket":"Kavut AŞ",
+            "Durum" :"Transfer Edildi"
+        },
+        {
+            "id":"2",
+            "Siparis":"Vestiyer",
+            "Bolum":"Projelendirmede-Vestiyer",
+            "Musteri":"Duha Yıldırım",
+            "BaslangicTarihi":"03/10/2020",
+            "BitisTarihi":"25/12/2021",
+            "Personel":"Emre Kılınç",
+            "Sirket":"Ağın Leblebileri",
+            "Durum" :"Transfer Edildi"
+        },
+        {
+            "id":"3",
+            "Siparis":"Mutfak Dolabı",
+            "Bolum":"Projelendirmede-Kapak",
+            "Musteri":"M. Akif Ürgen",
+            "BaslangicTarihi":"25/12/2020",
+            "BitisTarihi":"25/12/2021",
+            "Personel":"Emre Kılınç",
+            "Sirket":"Kayısı Canavarı",
+            "Durum" :"Transfer Edildi"
+        },
+    
+    ]
     }
 
 
     renderItem = ({ item}) => {
         
         const { navigate , push, goBack} = this.props.navigation
+        const musteri=item.Musteri
+        const siparis=item.Siparis
+        const baslangicTarihi=item.BaslangicTarihi
+        const bitisTarihi=item.BitisTarihi
+        const personel=item.Personel
         return(
-            <TouchableOpacity style={styles.item} >               
+            <TouchableOpacity style={styles.item} onPress={
+                ()=>{
+                    navigate("ProjelerDetay",{musteri,siparis,baslangicTarihi,personel,bitisTarihi})
+                }
+            }>               
                 
                 <Text style={styles.title}> {item.Musteri}</Text>
                 <Text style={{color:'green'}}>{item.Durum} </Text>
                 <View style={styles.durumView}>
                     
-                    <Text style={{color:'orange'}}>Tarih: {item.Tarih}</Text>
+                    <Text style={{color:'orange'}}>Tarih: {item.BaslangicTarihi}</Text>
                 </View>
                 
                 

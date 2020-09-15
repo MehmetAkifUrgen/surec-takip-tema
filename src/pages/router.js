@@ -28,7 +28,9 @@ import TransferEdilen from './SiparisSurecleri/TransferEdilen'
 import TransferEdilenDetay from './SiparisSurecleri/TransferEdilenDetay'
 import GecikmedekiProjeler from './SiparisSurecleri/GecikmedekiProjeler'
 import GecikmedekiProjelerDetay from './SiparisSurecleri/GecikmedekiProjelerDetay'
-import SiparisDetay from './Siparisler/SiparisDetay'
+import ProjelerDetay from './Projeler/ProjelerDetay'
+import KesimListeleriDetay from './KesimListeleri/KesimListeleriDetay'
+import IsEmirleriDetay from './IsEmirleri/IsEmirleriDetay'
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -356,8 +358,34 @@ const appNavigator = createStackNavigator({
           }
           }
     },
-    SiparisDetay:{
-        screen:SiparisDetay,
+    ProjelerDetay:{
+        screen:ProjelerDetay,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    KesimListeleriDetay:{
+        screen:KesimListeleriDetay,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    IsEmirleriDetay:{
+        screen:IsEmirleriDetay,
         navigationOptions:{
             headerTintColor:'white',
             headerStatusBarHeight:20,

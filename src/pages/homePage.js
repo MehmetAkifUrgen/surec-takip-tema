@@ -81,7 +81,7 @@ export default class HomePage extends Component {
         return(
             <TouchableOpacity style={styles.item} onPress={
                 () => {
-                    push(item.path);
+                    navigate(item.path);
                 }
             } >
                 

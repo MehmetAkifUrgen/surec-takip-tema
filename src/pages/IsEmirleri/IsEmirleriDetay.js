@@ -4,25 +4,25 @@ import { Text, View ,StyleSheet,StatusBar,FlatList,TouchableOpacity} from 'react
 
 
 
-export default class SiparisDetay extends Component {
+export default class IsEmirleriDetay extends Component {
     state={
         DATA:[
             {
             "id":"1",
           
             "Musteri":"Yusuf Sürmeli",
-            "Yorum" : "Muhteşem bir Sipariş"
+            "Yorum" : "We will rock you"
        
         },
         {
             "id":"2",
-            "Musteri":"Yusuf Sürmeli",
-            "Yorum" : "Muhteşem bir Sipariş"
+            "Musteri":"Memati Baş",
+            "Yorum" : "i just kill the man"
         },
         {
             "id":"3",
-            "Musteri":"Yusuf Sürmeli",
-            "Yorum" : "Muhteşem bir Sipariş"
+            "Musteri":"Abuzer Kömürcü",
+            "Yorum" : "we are the champions"
         },
     
     ]
@@ -57,19 +57,19 @@ export default class SiparisDetay extends Component {
         const { navigate , push, goBack, getParam} = this.props.navigation
         const musteri = getParam('musteri');
         const siparis = getParam('siparis');
-        const bitisTarihi = getParam('bitisTarihi');
-        const personel = getParam('personel');
-        const baslangicTarihi = getParam('baslangicTarihi');
+        const miktar = getParam('miktar');
+        const aciklama = getParam('aciklama');
+        const durum = getParam('durum');
         return (
             <View style={styles.container}>
                     <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
                     <View style={styles.detayView}>
                     <Text style={styles.detayText}>Müşteri Adı: {musteri}</Text>
-                    <Text style={styles.detayText}>Sipariş Adı:  {siparis} </Text>
-                    <Text style={styles.detayText}>Proje Adı: {siparis} {musteri} </Text>
-                    <Text style={styles.detayText}>Başlangıç Tarihi: {baslangicTarihi} </Text>
-                    <Text style={styles.detayText}>Bitiş Tarihi:  {bitisTarihi}</Text>
-                    <Text style={styles.detayText}>Personel Adı : {personel} </Text>
+                    <Text style={styles.detayText}>Sipariş Adı:  {musteri} </Text>
+                    <Text style={styles.detayText}>Proje Adı: {siparis}  </Text>
+                    <Text style={styles.detayText}>Miktar: {miktar} </Text>
+                    <Text style={styles.detayText}>Açıklama:  {aciklama}</Text>
+                    <Text style={styles.detayText}>Durum: {durum} </Text>
                
                  
                 </View>
@@ -95,13 +95,13 @@ const styles=StyleSheet.create({
         backgroundColor:'white'
     },
     detayView:{
-        marginHorizontal:'10%',
+        marginHorizontal:'7%',
         flexDirection:'column',
         backgroundColor:'white',
-        marginTop:50,
+        marginTop:30,
         padding:25,
         borderRadius:50,
-        borderColor:'#1c3faa',
+        borderColor:'tomato',
         borderWidth:1,
         shadowColor: "white",
         shadowOffset: {
@@ -150,7 +150,7 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         backgroundColor:'white'  ,
         borderRadius:10 ,
-        borderColor:'#1c3faa',
+        borderColor:'orange',
         borderWidth:1,
         marginHorizontal:'7%',
         marginVertical:'2%',

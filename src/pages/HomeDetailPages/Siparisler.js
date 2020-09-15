@@ -48,17 +48,9 @@ export default class Siparisler extends Component {
       
         const { navigate , push, goBack} = this.props.navigation
         
-        const musteri=item.Musteri
-        const siparis=item.Siparis
-        const baslangicTarihi=item.BaslangicTarihi
-        const bitisTarihi=item.BitisTarihi
-        const personel=item.Personel
+        
         return(
-            <TouchableOpacity style={styles.item} onPress={
-                ()=>{
-                    navigate("SiparisDetay",{musteri,siparis,baslangicTarihi,personel,bitisTarihi})
-                }
-            }  >               
+            <TouchableOpacity style={styles.item}   >               
                 
                 <Text style={styles.title}>{item.Musteri} {item.Siparis} </Text>
                 <Text style={{color:'orange'}}> {item.Musteri} </Text>

@@ -11,20 +11,29 @@ export default class KesimListeleri extends Component {
                 "id":"1",
                 "Musteri":"Yusuf Sürmeli mutfak",
                 "Durum":"Gövdeler",
-                "Bolum":"Gövdeler-Kesim Listesi"
+                "Bolum":"Gövdeler-Kesim Listesi",
+                "Zaman" : "2 Ay",
+                "Maliyet" :"20.000₺",
+                "Aciklama":"30m2 kare şeklinde"
             },
             {
                 "id":"2",
                 "Musteri":"Duha Yıldırım vestiyer",
                 "Durum":"KAPAK 1",
-                "Bolum":"Kapak1-Kesim Listesi"
+                "Bolum":"Kapak1-Kesim Listesi",
+                "Zaman" : "1 Ay",
+                "Maliyet" :"15.000₺",
+                "Aciklama":"3m uzunluğunda"
                
             },
             {
                 "id":"3",
                 "Musteri":"Akif Ürgen Antre",
                 "Durum":"KAPAK 2",
-                "Bolum":"Kapak2-Kesim Listesi"
+                "Bolum":"Kapak2-Kesim Listesi",
+                "Zaman" : "1 Ay",
+                "Maliyet" :"10.000₺",
+                "Aciklama":"Duvarlara duvar kağıdı yapıştırılacak"
                 
             }
         ]
@@ -34,8 +43,18 @@ export default class KesimListeleri extends Component {
     renderItem = ({ item}) => {
         
         const { navigate , push, goBack} = this.props.navigation
+        const musteri=item.Musteri
+        const durum=item.Durum
+        const bolum=item.Bolum
+        const zaman=item.Zaman
+        const maliyet=item.Maliyet
+        const aciklama=item.Aciklama
         return(
-            <TouchableOpacity style={styles.item} >               
+            <TouchableOpacity style={styles.item} onPress={
+                ()=>{
+                    navigate("KesimListeleriDetay",{musteri,durum,bolum,zaman,maliyet,aciklama})
+                }
+            } >               
                 
                 <Text style={styles.title}> {item.Musteri}</Text>
                 <View style={styles.durumView}>
