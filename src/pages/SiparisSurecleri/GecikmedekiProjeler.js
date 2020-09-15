@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar} from 'react-native'
-import HomePage from '../homePage';
+import { Text, View,TouchableOpacity,StyleSheet,FlatList,StatusBar } from 'react-native'
 
 
-
-export default class Siparisler extends Component {
+export default class GecikmedekiProjeler extends Component {
     state={
         DATA:[
             {
@@ -13,21 +11,19 @@ export default class Siparisler extends Component {
             "Bolum":"Projelendirmede-Kapı",
             "Musteri":"Yusuf Sürmeli",
             "BaslangicTarihi":"25/12/2020",
-            "BitisTarihi":"12/11/2021",
+            "BitisTarihi":"25/12/2021",
             "Personel":"Jimmy Durmaz",
-            "Sirket":"Kavut AŞ",
-            "Durum" :"Transfer Edildi"
+            "Sirket":"Kavut AŞ"
         },
         {
             "id":"2",
-            "Siparis":"Vestiyer",
-            "Bolum":"Projelendirmede-Vestiyer",
+            "Siparis":"Mutfak Dolabı",
+            "Bolum":"Projelendirmede-Dolap",
             "Musteri":"Duha Yıldırım",
-            "BaslangicTarihi":"03/10/2020",
+            "BaslangicTarihi":"25/12/2020",
             "BitisTarihi":"25/12/2021",
             "Personel":"Emre Kılınç",
-            "Sirket":"Ağın Leblebileri",
-            "Durum" :"Transfer Edildi"
+            "Sirket":"Ağın Leblebileri"
         },
         {
             "id":"3",
@@ -37,15 +33,15 @@ export default class Siparisler extends Component {
             "BaslangicTarihi":"25/12/2020",
             "BitisTarihi":"25/12/2021",
             "Personel":"Emre Kılınç",
-            "Sirket":"Kayısı Canavarı",
-            "Durum" :"Transfer Edildi"
+            "Sirket":"Kayısı Canavarı"
         },
     
     ]
     }
+    
 
     renderItem = ({ item}) => {
-      
+        
         const { navigate , push, goBack} = this.props.navigation
         
         const musteri=item.Musteri
@@ -53,16 +49,22 @@ export default class Siparisler extends Component {
         const baslangicTarihi=item.BaslangicTarihi
         const bitisTarihi=item.BitisTarihi
         const personel=item.Personel
+        
         return(
             <TouchableOpacity style={styles.item} onPress={
                 ()=>{
-                    navigate("SiparisDetay",{musteri,siparis,baslangicTarihi,personel,bitisTarihi})
+                    navigate("GecikmedekiProjelerDetay",{musteri,siparis,baslangicTarihi,personel,bitisTarihi})
                 }
-            }  >               
+            } >               
                 
-                <Text style={styles.title}>{item.Musteri} {item.Siparis} </Text>
-                <Text style={{color:'orange'}}> {item.Musteri} </Text>
-                <Text style={{color:'tomato'}}>Sipariş Tarihi: {item.BaslangicTarihi} </Text>
+                <Text style={styles.title}> {item.Sirket}-{item.Siparis}</Text>
+                <Text style={{color:'green',fontSize:15}}>{item.Bolum} </Text>
+                <Text style={{color:'orange',fontSize:15}}>{item.Musteri}</Text>
+                <View style={styles.durumView}>
+                    
+                    <Text style={{color:'tomato',fontSize:15}}>{item.BaslangicTarihi}</Text>
+                </View>
+                
                 
             </TouchableOpacity>
     
@@ -75,13 +77,14 @@ export default class Siparisler extends Component {
             <View style={{height:30}}></View>
         )
     }
+
     render() {
+        
         return (
             <View style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
                 <FlatList
-                contentContainerStyle={{marginTop:20}}
-                    numColumns={1}
+                    contentContainerStyle={{marginTop:'4%'}}
                     renderItem={this.renderItem}
                     data={this.state.DATA}
                     keyExtractor={item => item.id}
@@ -89,24 +92,26 @@ export default class Siparisler extends Component {
                 />
 
             </View>  
-            
         )
     }
 }
+
+
 const styles=StyleSheet.create({
     main:{
         flex:1,
         backgroundColor:'white'
     },
-  
     item:{ 
         flex:1,
         flexDirection: 'column',
         paddingVertical: 10,
-        borderWidth: 1,
-        borderColor: '#1c3faa',  
+        padding:10,
+        justifyContent:'center',
         backgroundColor:'white'  ,
         borderRadius:10 ,
+        borderColor:'#1c3faa',
+        borderWidth:2,
         marginHorizontal:'7%',
         marginVertical:'2%',
         shadowColor: "white",
@@ -118,28 +123,32 @@ const styles=StyleSheet.create({
         shadowRadius: 16.00,
 
         elevation: 8,
-        padding:10
-        
         
         
     },
-    
+   
+        
+   
     title:{
         color:'#1c3faa',
-        fontSize:18,
-        marginBottom:10
+        fontSize:16,
+        fontWeight:'bold'
         
     },
-    arama:{
-        width: 25,
-        height: 25,
-        marginHorizontal:10
-    },
-    aramaView:{
+    dateView:{
         flex:1,
         flexDirection:'row',
         justifyContent:'flex-end',  
         marginRight:10
+    },
+    date:{
+        
+        textAlign:'right',
+        color:'white'
+    },
+    durumView:{
+        flex:1,
+        flexDirection:'column',
+        alignItems:'flex-end'
     }
 })
-

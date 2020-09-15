@@ -36,8 +36,9 @@ export default class Projeler extends Component {
             <TouchableOpacity style={styles.item} >               
                 
                 <Text style={styles.title}> {item.Musteri}</Text>
+                <Text style={{color:'green'}}>{item.Durum} </Text>
                 <View style={styles.durumView}>
-                    <Text style={{color:'green'}}>{item.Durum} </Text>
+                    
                     <Text style={{color:'orange'}}>Tarih: {item.Tarih}</Text>
                 </View>
                 
@@ -77,7 +78,7 @@ export default class Projeler extends Component {
 
 const styles=StyleSheet.create({
     main:{
-        
+        flex:1,
         backgroundColor:'white'
     },
     item:{ 
@@ -89,7 +90,7 @@ const styles=StyleSheet.create({
         backgroundColor:'white'  ,
         borderRadius:10 ,
         borderColor:'blue',
-        borderWidth:2,
+        borderWidth:1,
         marginHorizontal:'7%',
         marginVertical:'2%',
         shadowColor: "white",
@@ -110,7 +111,7 @@ const styles=StyleSheet.create({
     title:{
         color:'blue',
         fontSize:15,
-        fontWeight:'500'
+        fontWeight:'bold'
         
     },
     dateView:{

@@ -61,7 +61,11 @@ export default class SiparisSurecleri extends Component {
                 
                 <Text style={styles.uretim}>Üretim Durumu</Text>
 
-                <TouchableOpacity style={styles.item} >               
+                <TouchableOpacity style={styles.item} onPress={
+                    ()=>{
+                        navigate('GecikmedekiProjeler')
+                    }
+                } >               
                     <Image style={styles.image} source={require('../assets/UretimDurumu/1.png')}></Image>
                     <Text style={styles.title}>Gecikmedeki Projeler </Text>
                 </TouchableOpacity>
@@ -75,7 +79,7 @@ export default class SiparisSurecleri extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.item} >               
                     <Image style={styles.image} source={require('../assets/UretimDurumu/4.png')}></Image>
-                    <Text style={styles.title}>Transfer Aşamasındaki Üretim Siparişleri</Text>
+                    <Text style={styles.title}>Transfer Aşamasındaki  Siparişler</Text>
                 </TouchableOpacity>
                 
         </ScrollView>  

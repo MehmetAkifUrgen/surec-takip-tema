@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar} from 'react-native'
+import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar,Linking} from 'react-native'
 import PersonelData from  '../data/PersonelData.js';
 
 var Yeni = new PersonelData();
@@ -13,12 +13,24 @@ export default class Isciler extends Component {
     renderItem = ({ item}) => {
         const { navigate , push, goBack} = this.props.navigation
         return(
-            <TouchableOpacity style={styles.item} >               
+            <TouchableOpacity style={styles.item}  >               
                 <Image style={styles.image} source={require('../assets/homeAssets/7.png')}></Image>
                 <Text style={styles.title}>{item.title}</Text>
                 <View style={styles.aramaView}>
+                <TouchableOpacity onPress={
+                         () =>{
+                            Linking.openURL(`tel:${9999}`)
+                        }
+                    }>
                         <Image style={styles.arama} source={require('../assets/telephone.png')}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={
+                        () => {
+                            Linking.openURL('whatsapp://send?text=&phone=5388757998')
+                        }
+                    }>
                         <Image style={styles.arama} source={require('../assets/whatsapp.png')}></Image>
+                    </TouchableOpacity>
                 </View>
                 
             </TouchableOpacity>
@@ -51,8 +63,8 @@ export default class Isciler extends Component {
 }
 const styles=StyleSheet.create({
     main:{
-        
-        backgroundColor:'#f1f5f7'
+        flex:1,
+        backgroundColor:'white'
     },
   
     item:{ 
@@ -61,11 +73,21 @@ const styles=StyleSheet.create({
         paddingVertical: 10,
         borderWidth: 1,
         borderColor: '#1c3faa',  
-        backgroundColor:'#1c3faa'  ,
+        backgroundColor:'white'  ,
         borderRadius:10 ,
         marginHorizontal:'7%',
         marginVertical:'2%',
-        alignItems:'center'
+        alignItems:'center',
+        shadowColor: "white",
+        shadowOffset: {
+	        width: 0,
+	        height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 8,
+        
         
     },
     image:{
@@ -77,9 +99,10 @@ const styles=StyleSheet.create({
         
     },
     title:{
-        color:'white',
+        color:'#1c3faa',
         fontSize:16,
-        fontStyle:'normal',
+        fontStyle:'italic',
+        
         
     },
     arama:{

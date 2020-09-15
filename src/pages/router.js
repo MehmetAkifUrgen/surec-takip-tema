@@ -26,6 +26,9 @@ import ProjelendirmeBirimi from './SiparisSurecleri/ProjelendirmeBirimi'
 import ProjelendirmeBirimiDetay from './SiparisSurecleri/ProjelendirmeBirimiDetay'
 import TransferEdilen from './SiparisSurecleri/TransferEdilen'
 import TransferEdilenDetay from './SiparisSurecleri/TransferEdilenDetay'
+import GecikmedekiProjeler from './SiparisSurecleri/GecikmedekiProjeler'
+import GecikmedekiProjelerDetay from './SiparisSurecleri/GecikmedekiProjelerDetay'
+import SiparisDetay from './Siparisler/SiparisDetay'
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -316,6 +319,45 @@ const appNavigator = createStackNavigator({
     },
     TransferEdilenDetay:{
         screen:TransferEdilenDetay,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    GecikmedekiProjeler:{
+        screen:GecikmedekiProjeler,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'GECİKMEDEKİ PROJELER',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    GecikmedekiProjelerDetay:{
+        screen:GecikmedekiProjelerDetay,
+        navigationOptions:{
+            headerTintColor:'white',
+            headerStatusBarHeight:20,
+            headerTitleAlign:'center',
+            headerTitle:'DETAYLAR',
+            headerStyle:{
+                backgroundColor:'#1c3faa',
+                
+          }
+          }
+    },
+    SiparisDetay:{
+        screen:SiparisDetay,
         navigationOptions:{
             headerTintColor:'white',
             headerStatusBarHeight:20,
