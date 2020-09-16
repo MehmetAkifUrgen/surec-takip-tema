@@ -39,8 +39,9 @@ export default class Istatistikler extends Component {
 }
 const styles=StyleSheet.create({
     main:{
+        flex:1,
         flexDirection:'column',
-        backgroundColor:'#f1f5f7'
+        backgroundColor:'white'
     },
     item:{ 
         flex:1,
@@ -48,12 +49,22 @@ const styles=StyleSheet.create({
         paddingVertical: 10,
         
         marginTop:20,
-        backgroundColor:'#1c3faa'  ,
+        backgroundColor:'white'  ,
         borderRadius:10 ,
         marginHorizontal:'7%',
        
         alignItems:'center',
-        
+        shadowColor: "white",
+        shadowOffset: {
+	        width: 0,
+	        height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 12,
+        borderWidth:1,
+        borderColor:'#1c3faa'
         
     },
     image:{
@@ -62,13 +73,15 @@ const styles=StyleSheet.create({
         borderRadius: 30,
         marginHorizontal: 10,
         borderWidth:2,
-        borderColor:'white'
+        borderColor:'#1c3faa',
+        
         
     },
     title:{
-        color:'white',
-        fontSize:16,
-        fontWeight:'bold'
+        color:'#1c3faa',
+        fontSize:15,
+        fontWeight:'bold',
+        marginLeft:10
         
     },
 })

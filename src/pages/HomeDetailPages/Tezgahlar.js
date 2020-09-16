@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar} from 'react-native'
+import Dialog, { SlideAnimation, DialogContent ,DialogTitle} from 'react-native-popup-dialog';
 
 
 
 
 export default class Tezgahlar extends Component {
+    componentWillUnmount(){
+        this.state.visible=false
+    }
     state={
         DATA:[
             {
@@ -18,7 +22,7 @@ export default class Tezgahlar extends Component {
             },
             {
                 "id":"2",
-                "Tezgah":"1.İstasyon Cumbala",
+                "Tezgah":"2.İstasyon Cumbala",
                 "Kira":"2",
                 "Fiyat":"14",
                 "Aciklama" :"Cumbala Tezgahı",
@@ -52,21 +56,23 @@ export default class Tezgahlar extends Component {
                 "Elektrik":"3",
                 "Islem":"Zımpara İslemi"
             }
-        ]
+        ],
+        visible:false,
+        tezgah:"",
+        kira:"",
+        fiyat:"",
+        aciklama:"",
+        elektrik:""
     }
 
     renderItem = ({ item}) => {
         
-        const { navigate , push, goBack} = this.props.navigation
-        const tezgah=item.Tezgah
-        const kira=item.Kira
-        const fiyat =item.Fiyat
-        const aciklama = item.Aciklama
-        const elektrik=item.Elektrik
+        
+       
         return(
             <TouchableOpacity style={styles.item} onPress={
                 ()=>{
-                    navigate("TezgahlarDetay",{tezgah,kira,fiyat,aciklama,elektrik})
+                    this.setState({visible:true,tezgah:item.Tezgah,kira:item.Kira,fiyat:item.Fiyat,aciklama:item.Aciklama,elektrik:item.Elektrik})
                 }
             } >               
                 
@@ -92,6 +98,30 @@ export default class Tezgahlar extends Component {
         return (
             <View style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
+                <Dialog visible={this.state.visible}
+                dialogTitle={<DialogTitle style={{backgroundColor:'orange'}} title="DETAYLAR"/>}
+                
+                dialogAnimation={new SlideAnimation({
+                    slideFrom:'top'
+                    
+                })}
+                
+                onTouchOutside={() => {
+                    this.setState({ visible: false });
+                  }}>
+                      <DialogContent>
+                          <View style={styles.dialog}>
+                              <Text style={styles.dialogText}>Tezgah Adı:   {this.state.tezgah}</Text>
+                              <Text style={styles.dialogText}>Açıklama:   {this.state.aciklama}</Text>
+                              <Text style={styles.dialogText}>Fiyat:   {this.state.fiyat}</Text>
+                              <Text style={styles.dialogText}>Kira Maliyeti:   {this.state.kira}</Text>
+                              <Text style={styles.dialogText}>Elektrik Maliyeti:  {this.state.elektrik}</Text>
+                            
+                             
+                          </View>
+                      </DialogContent>
+
+                </Dialog>
                 <FlatList
                     contentContainerStyle={{marginTop:'4%'}}
                     renderItem={this.renderItem}
@@ -165,6 +195,12 @@ const styles=StyleSheet.create({
         flexDirection:'column',
         alignItems:'flex-end',
         
-    }
+    },
+    dialogText:{
+        color:'#1c3faa',
+        fontSize:15,
+        marginVertical:10,
+        fontWeight:'bold'
+    },
 })
 

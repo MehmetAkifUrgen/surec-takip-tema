@@ -89,9 +89,9 @@ const styles=StyleSheet.create({
     },
     title:{
         color:'#1c3faa',
-        fontSize:16,
-        fontStyle:'normal',
-        
+        fontSize:15,
+        fontStyle:'italic',
+        marginLeft:5
     },
     arama:{
         width: 25,

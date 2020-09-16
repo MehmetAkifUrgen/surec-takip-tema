@@ -11,18 +11,18 @@ export default class DetaylarMusteri extends Component {
             <View style={styles.container}>
                 <View style={styles.detayView}>
                     <Text style={styles.detayText}>Şirket Adı:</Text>
-                    <Text style={styles.detayText}>Adı: {isim} </Text>
+                    <Text style={styles.detayText}>Adı:   {isim}</Text>
                     <Text style={styles.detayText}>Kimlik Numarası:</Text>
-                    <Text style={styles.detayText}>Telefon: {telefon}</Text>
+                    <Text style={styles.detayText}>Telefon:   {telefon}</Text>
                     <Text style={styles.detayText}>Faks:</Text>
-                    <Text style={styles.detayText}>Email: {email} </Text>
+                    <Text style={styles.detayText}>Email:   {email}</Text>
                     <Text style={styles.detayText}>Adres:</Text>
                     <Text style={styles.detayText}>Açıklama:</Text>
                 </View>
                 <View style={styles.siparisler}>
-                    <Text style={styles.detayText}>Siparişler</Text>
-                    <Text style={styles.detayText}>Adı: {isim} </Text>
-                    <Text style={styles.detayText}>Mobilya </Text>
+                    <Text style={{color:'orange',fontSize:18,fontWeight:'bold',textAlign:'center',textDecorationLine:'underline'}}>Siparişler</Text>
+                    <Text style={styles.siparisDetay}>Adı: {isim} </Text>
+                    <Text style={styles.siparisDetay}>Mobilya </Text>
                 </View>
             </View>
         )
@@ -51,13 +51,14 @@ const styles=StyleSheet.create({
         shadowRadius: 16.00,
 
         elevation: 16,
+        borderWidth:1,
+        borderColor:'#1c3faa'
         
     },
     detayText:{
         fontSize:15,
         marginVertical:5,
-        color:'black',
-        fontStyle:'italic',
+        color:'tomato',
         fontWeight:'bold'
     },
     siparisler:{
@@ -76,5 +77,13 @@ const styles=StyleSheet.create({
         shadowRadius: 16.00,
 
         elevation: 16,
+        borderWidth:1,
+        borderColor:'#1c3faa'
+    },
+    siparisDetay:{
+        color:'tomato',
+        fontSize:15,
+        fontWeight:'bold',
+        marginVertical:5
     }
 })

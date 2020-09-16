@@ -21,18 +21,15 @@ import Uretim from './IstatistiklerPages/uretim'
 import ProjeIstatistikleri from './IstatistiklerPages/projeIstatistikleri'
 import DetaylarMusteri from './MusterilerPages/detaylarMusteri'
 import PazarlamaSatis from './SiparisSurecleri/PazarlamaSatis'
-import PazarlamaSatisDetay from './SiparisSurecleri/PazarlamaSatisDetay'
 import ProjelendirmeBirimi from './SiparisSurecleri/ProjelendirmeBirimi'
-import ProjelendirmeBirimiDetay from './SiparisSurecleri/ProjelendirmeBirimiDetay'
 import TransferEdilen from './SiparisSurecleri/TransferEdilen'
 import TransferEdilenDetay from './SiparisSurecleri/TransferEdilenDetay'
 import GecikmedekiProjeler from './SiparisSurecleri/GecikmedekiProjeler'
 import GecikmedekiProjelerDetay from './SiparisSurecleri/GecikmedekiProjelerDetay'
 import ProjelerDetay from './Projeler/ProjelerDetay'
-import KesimListeleriDetay from './KesimListeleri/KesimListeleriDetay'
 import IsEmirleriDetay from './IsEmirleri/IsEmirleriDetay'
-import UrunAgaclariDetay from './UrunAgaclari/UrunAgaclariDetay'
-import TezgahlarDetay from './Tezgahlar/TezgahlarDetay'
+
+
 
 const appNavigator = createStackNavigator({
     Login:{
@@ -269,19 +266,7 @@ const appNavigator = createStackNavigator({
           }
           }
     },
-    PazarlamaSatisDetay:{
-        screen:PazarlamaSatisDetay,
-        navigationOptions:{
-            headerTintColor:'white',
-            headerStatusBarHeight:20,
-            headerTitleAlign:'center',
-            headerTitle:'DETAYLAR',
-            headerStyle:{
-                backgroundColor:'#1c3faa',
-                
-          }
-          }
-    },
+    
     ProjelendirmeBirimi:{
         screen:ProjelendirmeBirimi,
         navigationOptions:{
@@ -295,19 +280,7 @@ const appNavigator = createStackNavigator({
           }
           }
     },
-    ProjelendirmeBirimiDetay:{
-        screen:ProjelendirmeBirimiDetay,
-        navigationOptions:{
-            headerTintColor:'white',
-            headerStatusBarHeight:20,
-            headerTitleAlign:'center',
-            headerTitle:'DETAYLAR',
-            headerStyle:{
-                backgroundColor:'#1c3faa',
-                
-          }
-          }
-    },
+    
     TransferEdilen:{
         screen:TransferEdilen,
         navigationOptions:{
@@ -373,19 +346,7 @@ const appNavigator = createStackNavigator({
           }
           }
     },
-    KesimListeleriDetay:{
-        screen:KesimListeleriDetay,
-        navigationOptions:{
-            headerTintColor:'white',
-            headerStatusBarHeight:20,
-            headerTitleAlign:'center',
-            headerTitle:'DETAYLAR',
-            headerStyle:{
-                backgroundColor:'#1c3faa',
-                
-          }
-          }
-    },
+    
     IsEmirleriDetay:{
         screen:IsEmirleriDetay,
         navigationOptions:{
@@ -399,32 +360,9 @@ const appNavigator = createStackNavigator({
           }
           }
     },
-    UrunAgaclariDetay:{
-        screen:UrunAgaclariDetay,
-        navigationOptions:{
-            headerTintColor:'white',
-            headerStatusBarHeight:20,
-            headerTitleAlign:'center',
-            headerTitle:'DETAYLAR',
-            headerStyle:{
-                backgroundColor:'#1c3faa',
-                
-          }
-          }
-    },
-    TezgahlarDetay:{
-        screen:TezgahlarDetay,
-        navigationOptions:{
-            headerTintColor:'white',
-            headerStatusBarHeight:20,
-            headerTitleAlign:'center',
-            headerTitle:'DETAYLAR',
-            headerStyle:{
-                backgroundColor:'#1c3faa',
-                
-          }
-          }
-    }
+    
+    
+    
 
 
 

@@ -89,8 +89,9 @@ export default class SiparisSurecleri extends Component {
 }
 const styles=StyleSheet.create({
     main:{
+        flex:1,
         flexDirection:'column',
-        backgroundColor:'#f1f5f7'
+        backgroundColor:'white'
     },
   
     item:{ 
@@ -99,11 +100,22 @@ const styles=StyleSheet.create({
         paddingVertical: 10,
         borderWidth: 1,
         borderColor: '#1c3faa',  
-        backgroundColor:'#1c3faa'  ,
+        backgroundColor:'white'  ,
         borderRadius:10 ,
         marginHorizontal:'6%',
         marginVertical:'2%',
-        alignItems:'center'
+        alignItems:'center',
+        shadowColor: "white",
+        shadowOffset: {
+	        width: 0,
+	        height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 12,
+        borderWidth:1,
+        borderColor:'#1c3faa'
         
     },
     image:{
@@ -112,14 +124,16 @@ const styles=StyleSheet.create({
         borderRadius: 30,
         marginHorizontal: 10,
         borderWidth:2,
-        borderColor:'white'
+        borderColor:'#1c3faa'
         
     },
     title:{
-        color:'white',
-        fontSize:16,
-        fontStyle:'italic',
-        textAlign:'center'
+        color:'#1c3faa',
+        fontSize:15,
+        fontStyle:'normal',
+        textAlign:'center',
+        fontWeight:'bold',
+        marginLeft:10
         
     },
     
@@ -128,9 +142,9 @@ const styles=StyleSheet.create({
         fontSize:20,
         fontWeight:'bold',
         color:'white',
-        marginHorizontal:100,
+        marginHorizontal:150,
         marginVertical:20,
-        backgroundColor:'purple',
+        backgroundColor:'orange',
         borderRadius:20
         
     }

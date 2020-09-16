@@ -71,7 +71,7 @@ export default class Musteriler extends Component {
 }
 const styles=StyleSheet.create({
     main:{
-        
+        flex:1,
         backgroundColor:'white',
         
         
@@ -81,8 +81,8 @@ const styles=StyleSheet.create({
         flex:1,
         flexDirection: 'row',
         paddingVertical: 10,
-        
-          
+        borderWidth: 1,
+        borderColor: '#1c3faa',       
         backgroundColor:'white'  ,
         borderRadius:10 ,
         marginHorizontal:'7%',
@@ -106,14 +106,15 @@ const styles=StyleSheet.create({
         borderRadius: 25,
         marginHorizontal: 10,
         borderWidth:1,
-        borderColor:'black'
+        borderColor:'#1c3faa'
         
         
     },
     title:{
         color:'#1c3faa',
-        fontSize:17,
-        fontStyle:'italic'
+        fontSize:15,
+        fontStyle:'italic',
+        marginLeft:5
     },
     arama:{
         width: 25,

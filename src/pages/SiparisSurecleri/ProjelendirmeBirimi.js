@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { Text, View,TouchableOpacity,StyleSheet,FlatList,StatusBar } from 'react-native'
-
+import Dialog, { SlideAnimation, DialogContent ,DialogTitle} from 'react-native-popup-dialog';
 
 export default class ProjelendirmeBirimi extends Component {
+    componentWillUnmount(){
+        this.state.visible=false
+    }
     state={
         DATA:[
             {
@@ -36,24 +39,21 @@ export default class ProjelendirmeBirimi extends Component {
             "Sirket":"Kayısı Canavarı"
         },
     
-    ]
+    ],
+        visible:false,
+        musteri:"",
+        siparis:"",
+        baslangicTarihi:"",
+        bitisTarihi:"",
+        personel:""
     }
     
 
     renderItem = ({ item}) => {
-        
-        const { navigate , push, goBack} = this.props.navigation
-        
-        const musteri=item.Musteri
-        const siparis=item.Siparis
-        const baslangicTarihi=item.BaslangicTarihi
-        const bitisTarihi=item.BitisTarihi
-        const personel=item.Personel
-        
         return(
             <TouchableOpacity style={styles.item} onPress={
                 ()=>{
-                    navigate("ProjelendirmeBirimiDetay",{musteri,siparis,baslangicTarihi,personel,bitisTarihi})
+                    this.setState({visible:true,musteri:item.Musteri,siparis:item.Siparis,baslangicTarihi:item.BaslangicTarihi,bitisTarihi:item.BitisTarihi,personel:item.Personel})
                 }
             } >               
                 
@@ -83,6 +83,33 @@ export default class ProjelendirmeBirimi extends Component {
         return (
             <View style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
+
+                <Dialog visible={this.state.visible}
+                dialogTitle={<DialogTitle style={{backgroundColor:'orange'}} title="DETAYLAR"/>}
+                
+                dialogAnimation={new SlideAnimation({
+                    slideFrom:'top'
+                    
+                })}
+                
+                onTouchOutside={() => {
+                    this.setState({ visible: false });
+                  }}>
+                      <DialogContent>
+                          <View style={styles.dialog}>
+                            <Text style={styles.dialogText}>Müşteri Adı: {this.state.musteri}</Text>
+                            <Text style={styles.dialogText}>Sipariş Adı: {this.state.siparis} </Text>
+                            <Text style={styles.dialogText}>Başlangıç Tarihi: {this.state.baslangicTarihi} </Text>
+                            <Text style={styles.dialogText}>Bitiş Tarihi:  {this.state.bitisTarihi}</Text>
+                            <Text style={styles.dialogText}>Personel Adı : {this.state.personel} </Text>
+                            
+                             
+                          </View>
+                      </DialogContent>
+
+                </Dialog>
+
+
                 <FlatList
                     contentContainerStyle={{marginTop:'4%'}}
                     renderItem={this.renderItem}
@@ -150,5 +177,12 @@ const styles=StyleSheet.create({
         flex:1,
         flexDirection:'column',
         alignItems:'flex-end'
-    }
+    },
+       dialogText:{
+        color:'#1c3faa',
+        fontSize:15,
+        marginVertical:10,
+        fontWeight:'bold'
+    },
+
 })

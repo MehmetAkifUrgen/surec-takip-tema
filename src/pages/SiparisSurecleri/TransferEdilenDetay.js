@@ -77,7 +77,7 @@ const styles=StyleSheet.create({
         marginHorizontal:'10%',
         flexDirection:'column',
         backgroundColor:'white',
-        marginTop:50,
+        marginTop:30,
         padding:25,
         borderRadius:50,
         shadowColor: "white",
@@ -88,7 +88,9 @@ const styles=StyleSheet.create({
         shadowOpacity: 0.58,
         shadowRadius: 16.00,
 
-        elevation: 16,
+        elevation: 8,
+        borderWidth:1,
+        borderColor:'#1c3faa'
         
     },
     detayText:{
@@ -141,7 +143,7 @@ const styles=StyleSheet.create({
         shadowOpacity: 0.58,
         shadowRadius: 16.00,
 
-        elevation: 16,
+        elevation: 8,
         
         
     },
@@ -149,5 +151,11 @@ const styles=StyleSheet.create({
         flex:1,
         flexDirection:'column',
         alignItems:'flex-end'
+    },
+    title:{
+        color:'tomato',
+        fontWeight:'bold',
+        fontSize:15
     }
+    
 })

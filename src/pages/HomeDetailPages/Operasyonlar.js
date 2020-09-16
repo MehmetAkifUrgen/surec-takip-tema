@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
-import { Text, View , FlatList,StyleSheet,TouchableOpacity, StatusBar, Alert,Modal} from 'react-native'
+import { Text, View , FlatList,StyleSheet,TouchableOpacity, StatusBar} from 'react-native'
 import Tezgahlar from './Tezgahlar';
+import Dialog, { SlideAnimation, DialogContent ,DialogTitle} from 'react-native-popup-dialog';
 
 var Yeni = new Tezgahlar();
 
 export default class Operasyonlar extends Component {
     state={
         DATA:Yeni.state.DATA,
-       
+        visible:false,
+        tezgah:"",
+        operasyon:"",
+        aciklama:""
     }
-    
+    componentWillUnmount(){
+        this.state.visible=false
+    }
     
     renderItem = ({ item}) => {
         
@@ -17,7 +23,7 @@ export default class Operasyonlar extends Component {
         
         return(
             <TouchableOpacity style={styles.item}  onPress={()=>{
-                
+                this.setState({visible:true,tezgah:item.Tezgah,operasyon:item.Islem,aciklama:item.Aciklama})
             }
                 
             }>               
@@ -38,8 +44,31 @@ export default class Operasyonlar extends Component {
         )
     }
     render() {
+        const { navigate , push, goBack,getParam} = this.props.navigation
+       // const tezgah=getParam("tezgah")
         return (
             <View style={styles.main}>
+                <Dialog visible={this.state.visible}
+                dialogTitle={<DialogTitle style={{backgroundColor:'orange'}} title="DETAYLAR"/>}
+                
+                dialogAnimation={new SlideAnimation({
+                    slideFrom:'top'
+                    
+                })}
+                
+                onTouchOutside={() => {
+                    this.setState({ visible: false });
+                  }}>
+                      <DialogContent>
+                          <View style={styles.dialog}>
+                              <Text style={styles.dialogText}>Tezgah Adı:   {this.state.tezgah}</Text>
+                              <Text style={styles.dialogText}>Operasyon Adı:   {this.state.operasyon}</Text>
+                              <Text style={styles.dialogText}>Açıklama:   {this.state.aciklama}</Text>
+                             
+                          </View>
+                      </DialogContent>
+
+                </Dialog>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
                 <FlatList
                     contentContainerStyle={{marginTop:'4%'}}
@@ -59,6 +88,12 @@ const styles=StyleSheet.create({
         flex:1,
         backgroundColor:'white',
         
+    },
+    dialog:{
+        
+        justifyContent:'center',
+        backgroundColor:'white',
+        padding:10
     },
   
     item:{ 
@@ -109,11 +144,13 @@ const styles=StyleSheet.create({
         justifyContent:'flex-end',  
         marginRight:10
     },
-    tezgahStyle:{
-        flex:1,
-        flexDirection:'column',
-        alignItems:'flex-end',
-        
-    }
+
+    dialogText:{
+        color:'#1c3faa',
+        fontSize:15,
+        marginVertical:10,
+        fontWeight:'bold'
+    },
+   
 })
 

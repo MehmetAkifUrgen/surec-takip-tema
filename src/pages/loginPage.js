@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text,StyleSheet,TextInput,StatusBar,Image} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { color } from 'react-native-reanimated';
 
 
 
@@ -14,25 +15,19 @@ export default class LoginPage extends Component {
     return (
     
       <View style={styles.container}>
-         <StatusBar  backgroundColor= '#f1f5f8' barStyle="dark-content"></StatusBar>
+         <StatusBar  backgroundColor= '#1c3faa' barStyle="light-content"></StatusBar>
          <Image style={styles.image} source={require("./assets/logo.png")}></Image>
          <View style={styles.login}>
             <TextInput placeholder="Kullanıcı Adı" textContentType="username" inlineImageLeft="user" inlineImagePadding={10} style={styles.id}></TextInput>
             <TextInput placeholder="Parola" autoCompleteType={"password"} textContentType={"password"} inlineImageLeft="password" inlineImagePadding={10} style={styles.password}></TextInput>
-            <View style={styles.checbox}>
-                <CheckBox>
-                    
-               </CheckBox>
-               <Text>Fcuk Man</Text>
-             
-            </View>
+          
          </View>
          <TouchableOpacity style={styles.buton}  onPress={
              ()=>{
                  navigate('HomePage');
              }
          }> 
-            <Text style={{textAlign:'center', fontSize:18}}>Giriş</Text>
+            <Text style={{textAlign:'center', fontSize:18,color:'white'}}>Giriş</Text>
          </TouchableOpacity>
         
       </View>
@@ -43,15 +38,14 @@ const styles=StyleSheet.create({
     container:{
         flex:1,
         alignItems:'center',
-        
         backgroundColor:'#1c3faa'
     },
-    id:{
-        
+    id:{  
         width:'80%',
         height:50,
         backgroundColor:'white',
-        marginBottom:'5%', borderRadius:5
+        marginBottom:'5%',
+        borderRadius:5
     },
     password:{
         width:'80%',
@@ -76,7 +70,8 @@ const styles=StyleSheet.create({
         borderRadius:20,
         justifyContent:'center',
         flexDirection:'column',
-        marginBottom:50
+        marginBottom:50,
+        padding:10
     },
     checbox:{
         flexDirection:'row',
@@ -86,7 +81,7 @@ const styles=StyleSheet.create({
     buton:{
        width:80,
        height:40,
-       backgroundColor:'white',
+       backgroundColor:'green',
        borderRadius:25,
        justifyContent:'center'
     }

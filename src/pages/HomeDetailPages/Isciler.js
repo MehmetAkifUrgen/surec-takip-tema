@@ -95,14 +95,15 @@ const styles=StyleSheet.create({
         height: 50,
         borderRadius: 25,
         marginHorizontal: 10,
-        
+        borderColor:'#1c3faa',
+        borderWidth:2
         
     },
     title:{
         color:'#1c3faa',
         fontSize:16,
         fontStyle:'italic',
-        
+        marginLeft:5
         
     },
     arama:{

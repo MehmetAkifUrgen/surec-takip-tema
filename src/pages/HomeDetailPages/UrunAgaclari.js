@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,StyleSheet,TouchableOpacity, StatusBar} from 'react-native'
+import Dialog, { SlideAnimation, DialogContent ,DialogTitle} from 'react-native-popup-dialog';
 
 
 export default class UrunAgaclari extends Component {
+    componentWillUnmount(){
+        this.state.visible=false
+    }
     state={
         DATA:[{
             "id":"1",
@@ -40,28 +44,22 @@ export default class UrunAgaclari extends Component {
             "Tezgah":"1. İstasyon Kesim",
             "Operasyon":"Kesim İşlemi"
         }
-    ]
+    ],
+        visible:false,
+        tezgah:"",
+        operasyon:"",
+        agac:"",
+      
     }
 
     renderItem = ({ item}) => {
-        
-        const { navigate , push, goBack} = this.props.navigation
-
-        const agac=item.Agac
-        const tezgah=item.Tezgah
-        const operasyon=item.Operasyon
-
         return(
             <TouchableOpacity style={styles.item} onPress={
                 ()=>{
-                    navigate("UrunAgaclariDetay",{agac,tezgah,operasyon})
+                    this.setState({visible:true,tezgah:item.Tezgah,operasyon:item.Operasyon,agac:item.Agac})
                 }
-            } >               
-                
+            } >                
                 <Text style={styles.title}>{item.Agac}</Text>
-                
-                
-                
             </TouchableOpacity>
     
         );
@@ -77,6 +75,30 @@ export default class UrunAgaclari extends Component {
         return (
             <View style={styles.main}>
                 <StatusBar backgroundColor='#1c3faa' barStyle='light-content' ></StatusBar>
+                <Dialog visible={this.state.visible}
+                dialogTitle={<DialogTitle style={{backgroundColor:'orange'}} title="DETAYLAR"/>}
+                
+                dialogAnimation={new SlideAnimation({
+                    slideFrom:'top'
+                    
+                })}
+                
+                onTouchOutside={() => {
+                    this.setState({ visible: false });
+                  }}>
+                      <DialogContent>
+                          <View style={styles.dialog}>
+                              <Text style={{textAlign:'center',color:'tomato',fontWeight:'bold',marginVertical:10,fontSize:18,textDecorationLine:'underline'}}>{this.state.agac}</Text>
+                              <Text style={styles.dialogText}>Tezgah Adı:   {this.state.tezgah}</Text>
+                              <Text style={styles.dialogText}>Operasyon Adı:   {this.state.operasyon}</Text>
+                              <Text style={styles.dialogText}>Kira Maliyeti:   </Text>
+                              <Text style={styles.dialogText}>Elektrik Maliyeti:  </Text>
+                            
+                             
+                          </View>
+                      </DialogContent>
+
+                </Dialog>
                 <FlatList
                     contentContainerStyle={{marginTop:'4%'}}
                     renderItem={this.renderItem}
@@ -127,8 +149,9 @@ const styles=StyleSheet.create({
         
     },
     title:{
-        color:'black',
+        color:'#1c3faa',
         fontSize:17,
+        fontWeight:'bold'
         
     },
     arama:{
@@ -141,6 +164,12 @@ const styles=StyleSheet.create({
         flexDirection:'row',
         justifyContent:'flex-end',  
         marginRight:10
-    }
+    },
+    dialogText:{
+        color:'#1c3faa',
+        fontSize:15,
+        marginVertical:10,
+        fontWeight:'bold'
+    },
 })
 
