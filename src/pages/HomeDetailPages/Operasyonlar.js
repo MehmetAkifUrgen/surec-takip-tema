@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
-import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar} from 'react-native'
-import HomePage from '../homePage';
+import { Text, View , FlatList,StyleSheet,TouchableOpacity, StatusBar, Alert,Modal} from 'react-native'
+import Tezgahlar from './Tezgahlar';
 
-var Yeni = new HomePage();
+var Yeni = new Tezgahlar();
 
 export default class Operasyonlar extends Component {
     state={
         DATA:Yeni.state.DATA,
-        kira:1,
-        fiyat:1
+       
     }
-
+    
+    
     renderItem = ({ item}) => {
         
         const { navigate , push, goBack} = this.props.navigation
+        
         return(
-            <TouchableOpacity style={styles.item} >               
+            <TouchableOpacity style={styles.item}  onPress={()=>{
                 
-                <Text style={styles.title}>{item.title}</Text>
-                <Text>{item.id} . İstasyon</Text>
+            }
+                
+            }>               
+                
+                <Text style={styles.title}>{item.Islem}</Text>
+                <Text style={{color:'tomato',marginLeft:10}}>{item.Tezgah}</Text>
                 
                 
             </TouchableOpacity>
@@ -51,7 +56,7 @@ export default class Operasyonlar extends Component {
 }
 const styles=StyleSheet.create({
     main:{
-        
+        flex:1,
         backgroundColor:'white',
         
     },
@@ -74,7 +79,8 @@ const styles=StyleSheet.create({
         shadowRadius: 16.00,
 
         elevation: 12,
-        
+        borderWidth:1,
+        borderColor:'#1c3faa'
         
         
     },
@@ -87,8 +93,9 @@ const styles=StyleSheet.create({
         
     },
     title:{
-        color:'black',
+        color:'orange',
         fontSize:17,
+        fontWeight:'bold'
         
     },
     arama:{

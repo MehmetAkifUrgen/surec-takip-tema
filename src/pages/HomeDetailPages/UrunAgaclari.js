@@ -1,21 +1,64 @@
 import React, { Component } from 'react'
-import { Text, View , FlatList,StyleSheet,TouchableOpacity,Image, StatusBar} from 'react-native'
-import HomePage from '../homePage';
+import { Text, View , FlatList,StyleSheet,TouchableOpacity, StatusBar} from 'react-native'
 
-var Yeni = new HomePage();
 
 export default class UrunAgaclari extends Component {
     state={
-        DATA:Yeni.state.DATA
+        DATA:[{
+            "id":"1",
+            "Agac":"Gövdeler ürün ağacı",
+            "Tezgah":"1. İstasyon Kesim",
+            "Operasyon":"Kesim İşlemi"
+        },
+        {
+            "id":"2",
+            "Agac":"Kapaklar",
+            "Tezgah":"1. İstasyon Kesim",
+            "Operasyon":"Kesim İşlemi"
+        },
+        {
+            "id":"3",
+            "Agac":"Arkalık",
+            "Tezgah":"1. İstasyon Kesim",
+            "Operasyon":"Kesim İşlemi"
+        },
+        {
+            "id":"4",
+            "Agac":"Gövdeler ürün ağacı",
+            "Tezgah":"1. İstasyon Kesim",
+            "Operasyon":"Kesim İşlemi"
+        },
+        {
+            "id":"5",
+            "Agac":"Kapaklar",
+            "Tezgah":"1. İstasyon Kesim",
+            "Operasyon":"Kesim İşlemi"
+        },
+        {
+            "id":"6",
+            "Agac":"Arkalık",
+            "Tezgah":"1. İstasyon Kesim",
+            "Operasyon":"Kesim İşlemi"
+        }
+    ]
     }
 
     renderItem = ({ item}) => {
         
         const { navigate , push, goBack} = this.props.navigation
+
+        const agac=item.Agac
+        const tezgah=item.Tezgah
+        const operasyon=item.Operasyon
+
         return(
-            <TouchableOpacity style={styles.item} >               
+            <TouchableOpacity style={styles.item} onPress={
+                ()=>{
+                    navigate("UrunAgaclariDetay",{agac,tezgah,operasyon})
+                }
+            } >               
                 
-                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.title}>{item.Agac}</Text>
                 
                 
                 
@@ -49,7 +92,7 @@ export default class UrunAgaclari extends Component {
 }
 const styles=StyleSheet.create({
     main:{
-        
+        flex:1,
         backgroundColor:'white',
         
     },
@@ -57,8 +100,7 @@ const styles=StyleSheet.create({
     item:{ 
         flex:1,
         flexDirection: 'column',
-        paddingVertical: 10,
-        paddingHorizontal:10, 
+         
         backgroundColor:'white'  ,
         borderRadius:10 ,
         marginHorizontal:'7%',
@@ -72,7 +114,7 @@ const styles=StyleSheet.create({
         shadowRadius: 16.00,
 
         elevation: 12,
-        
+        padding:10
         
         
     },
