@@ -96,7 +96,7 @@ const styles=StyleSheet.create({
         borderRadius: 25,
         marginHorizontal: 10,
         borderColor:'#1c3faa',
-        borderWidth:2
+        borderWidth:1
         
     },
     title:{

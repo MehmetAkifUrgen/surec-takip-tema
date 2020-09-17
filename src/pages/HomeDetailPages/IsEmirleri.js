@@ -138,7 +138,7 @@ export default class IsEmirleri extends Component {
 
 const styles=StyleSheet.create({
     main:{
-        
+        flex:1,
         backgroundColor:'white'
     },
     item:{ 
