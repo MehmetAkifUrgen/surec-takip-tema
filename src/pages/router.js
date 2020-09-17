@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import LoginPage from './loginPage';
@@ -28,10 +27,14 @@ import GecikmedekiProjeler from './SiparisSurecleri/GecikmedekiProjeler'
 import GecikmedekiProjelerDetay from './SiparisSurecleri/GecikmedekiProjelerDetay'
 import ProjelerDetay from './Projeler/ProjelerDetay'
 import IsEmirleriDetay from './IsEmirleri/IsEmirleriDetay'
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import DrawerMenu from './DrawerMenu/DrawerMenu'
+
 
 
 
 const appNavigator = createStackNavigator({
+
     Login:{
         screen: LoginPage,
         navigationOptions:{
@@ -41,7 +44,9 @@ const appNavigator = createStackNavigator({
     HomePage : {
         screen:HomePage,
         navigationOptions:{
+            
             headerShown:false,
+            
             
         }
     },
@@ -372,4 +377,20 @@ const appNavigator = createStackNavigator({
 
 );
 
-export default AppContainer = createAppContainer(appNavigator);
+const drawer = createDrawerNavigator({
+    Home:{
+        screen:appNavigator,
+        navigationOptions:{
+            drawerLabel:"PROFİL",
+        },
+    }},
+    {
+        drawerPosition:'left',
+        contentComponent:DrawerMenu,
+        drawerWidth:'60%',
+        drawerBackgroundColor:'#1c3faa',
+        drawerType:'slide',
+        
+})
+
+export default AppContainer = createAppContainer(drawer);

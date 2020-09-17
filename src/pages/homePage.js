@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,TouchableOpacity,Image,StyleSheet,StatusBar} from 'react-native'
-import { color } from 'react-native-reanimated';
-import PropTypes from 'prop-types';
 
-  
-   
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
 export default class HomePage extends Component {
     
