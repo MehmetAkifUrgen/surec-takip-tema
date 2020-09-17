@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View , FlatList,TouchableOpacity,Image,StyleSheet,StatusBar} from 'react-native'
+import { Text, View , FlatList,TouchableOpacity,Image,StyleSheet,StatusBar, SafeAreaView} from 'react-native'
 
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
@@ -96,7 +96,14 @@ export default class HomePage extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar backgroundColor='#1c3faa' translucent={true} showHideTransition="slide" barStyle="light-content" ></StatusBar>
+                <SafeAreaView style={styles.header}>
+                    <Text style={{fontSize:18,color:'white',fontWeight:'bold'}}>PRODROM ICT</Text>
+                    
+                    
+                </SafeAreaView>
+                <Image style={{flexDirection:'column', width:30,height:30,zIndex:100,justifyContent:'center',alignItems:'center',marginTop:10,marginLeft:5}} source={require('./assets/right.png')}></Image>
             <View style={styles.list}>
+                
                 <FlatList
                     contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
                     numColumns={3}
@@ -140,16 +147,20 @@ const styles=StyleSheet.create({
         
     },
     title:{
+        
         fontSize:16,
         fontWeight:'bold',
         color:'#1c3faa',
         textAlign:'center'
     },
     list:{
-        flex:1,
+        flex:7,
         alignItems:'center',
         backgroundColor:'white',
         
       
+    },
+    header:{
+        height:'10%',backgroundColor:'#1c3faa', justifyContent:'center',alignItems:'center',borderBottomLeftRadius:50,borderBottomRightRadius:60
     }
 })

@@ -10,8 +10,8 @@ export default class DrawerMenu extends Component {
         alignItems:'center',}}><Image style={styles.image} source={require('../assets/person.png')}></Image></View>
                     <Text style={styles.detayText}>Şirket Adı: Prodrom</Text>
                     <Text style={styles.detayText}>Adı: Duha</Text>
-                    <Text style={styles.detayText}>Kimlik Numarası: 12345678912</Text>
-                    <Text style={styles.detayText}>Telefon: 0536478954</Text>
+                    <Text style={styles.detayText}>TC No: 12345678910</Text>
+                    <Text style={styles.detayText}>Telefon: 98765432109</Text>
                     <Text style={styles.detayText}>Faks:</Text>
                     <Text style={styles.detayText}>Email: dfşskgşl@gmail.com</Text>
                     <Text style={styles.detayText}>Adres: Kültür Mah.</Text>
@@ -31,7 +31,7 @@ const styles=StyleSheet.create({
         marginTop:30,
         width:100,
         height:100,
-        marginBottom:30
+        marginBottom:60
        
     },
     detayText:{
@@ -39,6 +39,6 @@ const styles=StyleSheet.create({
         marginVertical:5,
         color:'white',
         fontWeight:'bold',
-        marginLeft:10
+        marginLeft:20
     },
 })
