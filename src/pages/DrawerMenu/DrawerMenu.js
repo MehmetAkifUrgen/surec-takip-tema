@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Image,  StyleSheet, Text, View } from 'react-native'
+import { Button, Image,  StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
 export default class DrawerMenu extends Component {
@@ -15,6 +16,18 @@ export default class DrawerMenu extends Component {
                     <Text style={styles.detayText}>Faks:</Text>
                     <Text style={styles.detayText}>Email: dfşskgşl@gmail.com</Text>
                     <Text style={styles.detayText}>Adres: Kültür Mah.</Text>
+
+                    <View style={styles.butons}>
+                        <TouchableOpacity style={styles.buton} >
+                            <Image style={styles.butonImage} source={require('../assets/edit-button.png')}></Image>
+                            <Text style={{color:'white',marginTop:5,fontWeight:'bold'}}>DÜZENLE</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.buton} >
+                            <Image style={styles.butonImage} source={require('../assets/exit.png')}></Image>
+                            <Text style={{color:'white',marginTop:5,fontWeight:'bold'}}>ÇIKIŞ</Text>
+                        </TouchableOpacity>
+                        
+                    </View>
             </View>
         )
     }
@@ -22,16 +35,12 @@ export default class DrawerMenu extends Component {
 const styles=StyleSheet.create({
     container:{
         flex:1,
-        
-       
-     
-        
     },
     image:{
-        marginTop:30,
+        marginTop:60,
         width:100,
         height:100,
-        marginBottom:60
+        marginBottom:40
        
     },
     detayText:{
@@ -41,4 +50,19 @@ const styles=StyleSheet.create({
         fontWeight:'bold',
         marginLeft:20
     },
+    butons:{
+        flex:1,
+        flexDirection:'row-reverse',
+        justifyContent:'space-around',
+        alignItems:'flex-end',
+        marginBottom:30
+    },
+    buton:{
+        marginHorizontal:50,
+        alignItems:'center'
+    },
+    butonImage:{
+        width:40,
+        height:40
+    }
 })

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View , FlatList,TouchableOpacity,Image,StyleSheet,StatusBar, SafeAreaView} from 'react-native'
 
-import { createDrawerNavigator } from 'react-navigation-drawer';
 
 export default class HomePage extends Component {
     
@@ -97,7 +96,7 @@ export default class HomePage extends Component {
             <View style={styles.container}>
                 <StatusBar backgroundColor='#1c3faa' translucent={true} showHideTransition="slide" barStyle="light-content" ></StatusBar>
                 <SafeAreaView style={styles.header}>
-                    <Text style={{fontSize:18,color:'white',fontWeight:'bold'}}>PRODROM ICT</Text>
+                    <Text style={{fontSize:18,color:'white',fontWeight:'bold',marginTop:30}}>PRODROM ICT</Text>
                     
                     
                 </SafeAreaView>
@@ -127,7 +126,7 @@ const styles=StyleSheet.create({
         width:100,
         alignItems:'center',
         marginVertical:'5%', 
-        marginHorizontal:10,
+        marginHorizontal:8,
         backgroundColor:'white',
         borderRadius:5,
         shadowColor: "white",
@@ -142,13 +141,13 @@ const styles=StyleSheet.create({
         
     },
     image:{
-        width:90,
-        height:90,
+        width:85,
+        height:85,
         
     },
     title:{
         
-        fontSize:16,
+        fontSize:15,
         fontWeight:'bold',
         color:'#1c3faa',
         textAlign:'center'
@@ -157,6 +156,7 @@ const styles=StyleSheet.create({
         flex:7,
         alignItems:'center',
         backgroundColor:'white',
+        marginBottom:30
         
       
     },
